@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="bg-black">
         <PixelSnow 
           color="#ffffff"
-          flakeSize={0.01}
+          flakeSize={0.02}
           minFlakeSize={1.25}
           pixelResolution={1000}
           speed={1.25}
@@ -34,7 +34,7 @@ export default function RootLayout({
           depthFade={8}
           farPlane={20}
           gamma={0.4545}
-          variant="square"
+          variant="snowflake"
         />
         {children}
       </body>
