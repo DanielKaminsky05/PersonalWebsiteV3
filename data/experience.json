@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "company": "Entree Capital",
+    "logo": "/logos/entree.png",
+    "position": "Software Engineer",
+    "dates": "May 2024 - Aug 2024",
+    "shortDescription": "Built internal tools to help the investment team evaluate and compare startup founders.",
+    "details": [
+      "Developed a centralized founder evaluation dashboard using Next.js and Node.js.",
+      "Optimized database queries and API logic, reducing response times by ~30%.",
+      "Helped streamline founder screening workflows, reducing evaluation time by 60%."
+    ]
+  },
+  {
+    "id": "2",
+    "company": "Western Developer Society",
+    "logo": "/logos/wds.png",
+    "position": "Project Manager",
+    "dates": "Jan 2024 - Jan 2025",
+    "shortDescription": "Led a team of developers to deliver a real product for an external client.",
+    "details": [
+      "Managed a team of 6 developers across the full product lifecycle.",
+      "Ran weekly sprint meetings, set technical direction, and ensured accountability.",
+      "Worked closely with developers to unblock technical challenges and meet deadlines."
+    ]
+  },
+  {
+    "id": "3",
+    "company": "RBC",
+    "logo": "/logos/rbc.png",
+    "position": "Design Thinking Fellow",
+    "dates": "Sep 2024 - Dec 2024",
+    "shortDescription": "Selected for a competitive fellowship focused on applying AI to real-world problems.",
+    "details": [
+      "Selected as 1 of 32 fellows from over 350 applicants.",
+      "Led user research interviews with teachers, students, and school board CTOs.",
+      "Helped design an AI-driven education tool focused on reducing cognitive offloading."
+    ]
+  }
+]
