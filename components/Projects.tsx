@@ -20,8 +20,8 @@ export default function Projects() {
   return (
     <section className="py-12 md:py-24 relative">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white mb-8 md:mb-12 text-center">
-          Projects
+        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 text-center pb-12">
+            Projects
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
