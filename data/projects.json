@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Quantum Task Manager",
+    "shortDescription": "A productivity tool that schedules tasks based on energy levels.",
+    "fullDescription": "Quantum Task Manager isn't just a todo list; it's an energy management system. By analyzing your peak productivity hours and task difficulty, it automatically schedules your day for maximum efficiency. Tools used: React, Node.js, and a custom scheduling algorithm.",
+    "author": "Daniel Kaminsky",
+    "media": "/projects/quantum.gif",
+    "tags": ["React", "Node.js", "Productivity"]
+  },
+  {
+    "id": "2",
+    "title": "EcoTrack Mobile App",
+    "shortDescription": "Track your carbon footprint with real-time analytics.",
+    "fullDescription": "EcoTrack empowers users to make sustainable choices by tracking daily activities and calculating their environmental impact. Features include travel tracking, energy usage estimation, and a gamified reward system for reducing your footprint.",
+    "author": "Daniel Kaminsky",
+    "media": "/projects/ecotrack.gif",
+    "tags": ["React Native", "Firebase", "Sustainability"]
+  },
+  {
+    "id": "3",
+    "title": "Nebula Data Visualizer",
+    "shortDescription": "Interactive 3D representations of complex datasets.",
+    "fullDescription": "Nebula transforms boring spreadsheets into immersive 3D galaxies of data. Designed for data scientists and analysts, it supports millions of data points with smooth performance using WebGL. It helps uncover hidden patterns and clusters in large datasets.",
+    "author": "Daniel Kaminsky",
+    "media": "/projects/nebula.gif",
+    "tags": ["WebGL", "Three.js", "Data Science"]
+  },
+  {
+    "id": "4",
+    "title": "Sonic AI Composer",
+    "shortDescription": "Generate royalty-free background music for videos.",
+    "fullDescription": "Sonic AI Composer uses deep learning to generate unique musical tracks based on mood, tempo, and genre selection. Perfect for content creators looking for original, royalty-free background music. The backend runs on a custom Python server with TensorFlow.",
+    "author": "Daniel Kaminsky",
+    "media": "/projects/sonic.gif",
+    "tags": ["Python", "TensorFlow", "Music"]
+  },
+  {
+    "id": "5",
+    "title": "CryptoWatch Dashboard",
+    "shortDescription": "Real-time cryptocurrency tracking and portfolio management.",
+    "fullDescription": "A sleek, dark-mode dashboard for tracking cryptocurrency prices across multiple exchanges. Features include real-time WebSocket updates, portfolio performance charting, and customizable price alerts.",
+    "author": "Daniel Kaminsky",
+    "media": "/projects/crypto.gif",
+    "tags": ["Vue.js", "WebSockets", "Finance"]
+  }
+]
