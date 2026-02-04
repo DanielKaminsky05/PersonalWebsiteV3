@@ -19,7 +19,7 @@
     "Instead of returning links, Prompt2Cart programmatically creates a cart and generates a one-click checkout. The result is a frictionless chat-to-cart experience that removes traditional e-commerce browsing."
     ],
     "author": "Daniel Kaminsky, Hadi Youssef, Josh Muszka, Henrique Leite",
-    "media": "/projects/orderbook.gif",
+    "media": "/projects/prompt2cart.mp4",
     "tags": ["Next.js", "LangChain", "Shopify", "FastAPI", "MongoDB"],
     "github": "https://github.com/DanielKaminsky05/Prompt2Cart"
   },
@@ -33,7 +33,8 @@
     "author": "Daniel Kaminsky, Cynthia Li, Kiyana Salmi, Eric Wehlend",
     "media": "/projects/tutorial.png",
     "tags": ["Figma", "Design Thinking"],
-    "figma": "https://www.figma.com/design/COJerCwWoalQOlSdPpPqob/Tutorial-Figma?node-id=0-1&t=LCVhF8YTlRtB9RCU-1"
+    "figma": "https://www.figma.com/design/COJerCwWoalQOlSdPpPqob/Tutorial-Figma?node-id=0-1&t=LCVhF8YTlRtB9RCU-1",
+    "pitch": "https://docs.google.com/presentation/d/e/2PACX-1vTSxtnLEkIfjscysF48MInKf8ql2enSJPzFjWLNaMH2hdpLQs4u52lbYPG13mNbpQLdUQKvxjrsXI15/pub?start=false&loop=false&delayms=3000"
   },
   {
     "id": "4",
@@ -43,7 +44,7 @@
     "Features a custom Dataset abstraction for loading CSV data and benchmarking models consistently. Includes a Qt-based GUI, command-line demos, and a full unit testing suite using GoogleTest."
     ],
     "author": "Daniel Kaminsky, Thomson Lam, Henrique Leite",
-    "media": "/projects/sonic.gif",
+    "media": "/projects/tree_machine_learning_library.png",
     "tags": ["C++", "OOP", "Machine Learning", "Qt", "GoogleTest"],
     "github": "https://github.com/DanielKaminsky05/TreeMachineLearningLibrary"
   },
@@ -55,7 +56,7 @@
         "Explicit domain modeling for orders, fills, trades, and execution results. Designed with clear separation of concerns and thoroughly tested with unit and integration tests."
     ],
     "author": "Daniel Kaminsky",
-    "media": "/projects/crypto.gif",
+    "media": "/projects/orderbook.png",
     "tags": ["C++", "GoogleTest", "GitHub Actions", "Unit Testing"],
     "github": "https://github.com/DanielKaminsky05/OrderBook"
 
