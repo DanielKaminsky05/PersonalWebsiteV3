@@ -18,20 +18,20 @@ interface Project {
 
 export default function Projects() {
   return (
-    <section className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white mb-12 text-center">
+    <section className="py-12 md:py-24 relative">
+      <div className="max-w-5xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-white mb-8 md:mb-12 text-center">
           Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectData.map((project) => (
             <div
               key={project.id}
               className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden"
             >
               {/* Image Container */}
-              <div className="h-48 w-full relative overflow-hidden bg-white/5">
+              <div className="h-40 w-full relative overflow-hidden bg-white/5">
                  {!project.media ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black flex items-center justify-center">
                         <Layers className="w-12 h-12 text-white/20 group-hover:text-white/40 transition-colors" />
@@ -61,17 +61,17 @@ export default function Projects() {
                  )}
               </div>
 
-              <div className="p-6">
+              <div className="p-5">
                 <div className="flex justify-between items-start mb-4">
                     <div>
-                        <h3 className="text-xl font-bold text-white transition-colors">
+                        <h3 className="text-lg font-bold text-white transition-colors">
                             {project.title}
                         </h3>
                         <p className="text-xs text-gray-400 font-mono mt-1">{project.author}</p>
                     </div>
                 </div>
                 
-                <div className="prose prose-invert prose-sm max-w-none mb-6">
+                <div className="prose prose-invert prose-sm max-w-none mb-4">
                     {project.description.map((paragraph, index) => (
                         <p key={index} className="text-gray-400 text-sm leading-relaxed mb-4 last:mb-0">
                           {paragraph}

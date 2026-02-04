@@ -24,11 +24,11 @@ export default function ExperienceCard({ experience }: { experience: Experience 
       style={{ borderLeftColor: accentColor }}
       className="w-full max-w-4xl mx-auto bg-white/5 backdrop-blur-sm border-y border-r border-l-4 border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors duration-300 scroll-mt-24"
     >
-      <div className="p-6 flex flex-col md:flex-row gap-6 items-start relative">
+      <div className="p-5 flex flex-col md:flex-row gap-4 items-start relative">
         {/* Logo Section */}
         <div className="flex-shrink-0">
           <div 
-            className="w-16 h-16 rounded-xl overflow-hidden flex items-center justify-center relative shadow-lg"
+            className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center relative shadow-lg"
             style={{ backgroundColor: `${accentColor}20` }}
           >
             {experience.logo ? (
@@ -39,7 +39,7 @@ export default function ExperienceCard({ experience }: { experience: Experience 
                 className="object-cover"
               />
             ) : (
-              <Briefcase className="w-8 h-8 text-white/50" />
+              <Briefcase className="w-6 h-6 text-white/50" />
             )}
           </div>
         </div>
@@ -48,8 +48,8 @@ export default function ExperienceCard({ experience }: { experience: Experience 
         <div className="flex-grow space-y-4">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
             <div>
-              <h3 className="text-xl font-bold text-white">{experience.position}</h3>
-              <p className="text-lg font-semibold" style={{ color: accentColor }}>{experience.company}</p>
+              <h3 className="text-lg font-bold text-white">{experience.position}</h3>
+              <p className="text-base font-semibold" style={{ color: accentColor }}>{experience.company}</p>
             </div>
             <span 
               className="text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap border"
@@ -83,10 +83,10 @@ export default function ExperienceCard({ experience }: { experience: Experience 
           <div className="pt-4">
             <Link 
               href={`/experience/${experience.id}`}
-              className="inline-flex items-center gap-2 px-6 py-2 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform shadow-lg shadow-white/10"
+              className="inline-flex items-center gap-2 px-5 py-1.5 bg-white text-black font-bold text-sm rounded-full hover:scale-105 transition-transform shadow-lg shadow-white/10"
             >
               Deep Dive
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>

@@ -6,8 +6,8 @@ import TextType from "@/components/TextType";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-10 px-4 max-w-6xl mx-auto z-10 relative">
-      <div className="flex-1 text-center md:text-left space-y-4">
+    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen gap-2 md:gap-10 px-4 max-w-6xl mx-auto z-10 relative py-12 md:py-0">
+      <div className="w-full md:flex-1 text-center md:text-left space-y-2 md:pt-0">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
           Hi, I'm Daniel
         </h1>
@@ -30,7 +30,7 @@ export default function Hero() {
           />
         </div>
         
-        <div className="pt-4 flex items-center justify-center md:justify-start gap-4">
+        <div className="flex items-center justify-center md:justify-start gap-4">
           <a 
             href="/resume.pdf" 
             target="_blank" 
@@ -64,8 +64,8 @@ export default function Hero() {
         </div>
       </div>
       
-      <div className="flex-1 relative flex justify-center items-center">
-        <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl ">
+      <div className="w-full md:flex-1 relative flex justify-center items-center">
+        <div className="relative w-48 h-48 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl ">
           <Image
             src="/Headshot.png"
             alt="Daniel - CS @ Western"
