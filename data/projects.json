@@ -1,47 +1,63 @@
 [
-  {
+    {
     "id": "1",
-    "title": "Quantum Task Manager",
-    "shortDescription": "A productivity tool that schedules tasks based on energy levels.",
-    "fullDescription": "Quantum Task Manager isn't just a todo list; it's an energy management system. By analyzing your peak productivity hours and task difficulty, it automatically schedules your day for maximum efficiency. Tools used: React, Node.js, and a custom scheduling algorithm.",
-    "author": "Daniel Kaminsky",
-    "media": "/projects/quantum.gif",
-    "tags": ["React", "Node.js", "Productivity"]
-  },
+    "title": "Secureframe",
+    "description": [
+    "1st Place in Cybersecurity at the Toronto Tech Expo.",
+    "SecureFrame is an AI-powered video privacy system that uses YOLOv8 object detection and AES encryption to selectively secure sensitive entities in video footage. Objects are detected and tracked across frames, enabling precise, entity-level protection. Encryption is reversible, allowing authorized users to restore original video content. Designed as a secure alternative to traditional blurring or redaction techniques."
+    ],
+    "author": "Daniel Kaminsky, Rishabh Jain, David Vera, Kethy Hu, Tazrin Khalid",
+    "media": "/projects/secureframeDemo.mp4",
+    "tags": ["YOLOv8", "React", "AES", "Flask"],
+    "github": "https://github.com/DanielKaminsky05/Secureframe"
+    },
   {
     "id": "2",
-    "title": "EcoTrack Mobile App",
-    "shortDescription": "Track your carbon footprint with real-time analytics.",
-    "fullDescription": "EcoTrack empowers users to make sustainable choices by tracking daily activities and calculating their environmental impact. Features include travel tracking, energy usage estimation, and a gamified reward system for reducing your footprint.",
-    "author": "Daniel Kaminsky",
-    "media": "/projects/ecotrack.gif",
-    "tags": ["React Native", "Firebase", "Sustainability"]
+    "title": "Prompt2Cart",
+    "description": [
+    "Prompt2Cart is an AI-powered shopping assistant that transforms natural language requests into ready-to-buy Shopify carts. Users describe what they need in plain English, including preferences, constraints, and budget. Agentic workflows analyze intent, search across Shopify stores, and select relevant products.",
+    "Instead of returning links, Prompt2Cart programmatically creates a cart and generates a one-click checkout. The result is a frictionless chat-to-cart experience that removes traditional e-commerce browsing."
+    ],
+    "author": "Daniel Kaminsky, Hadi Youssef, Josh Muszka, Henrique Leite",
+    "media": "/projects/orderbook.gif",
+    "tags": ["Next.js", "LangChain", "Shopify", "FastAPI", "MongoDB"],
+    "github": "https://github.com/DanielKaminsky05/Prompt2Cart"
   },
   {
     "id": "3",
-    "title": "Nebula Data Visualizer",
-    "shortDescription": "Interactive 3D representations of complex datasets.",
-    "fullDescription": "Nebula transforms boring spreadsheets into immersive 3D galaxies of data. Designed for data scientists and analysts, it supports millions of data points with smooth performance using WebGL. It helps uncover hidden patterns and clusters in large datasets.",
-    "author": "Daniel Kaminsky",
-    "media": "/projects/nebula.gif",
-    "tags": ["WebGL", "Three.js", "Data Science"]
+    "title": "Tutorial",
+    "description": [
+    "Tutorial is a concept web app designed to introduce responsible AI use to students in early education. The experience focuses on onboarding students to AI through guided prompt archetypes rather than unrestricted chat. It emphasizes critical thinking, habit-building, and collaboration instead of cognitive offloading.",
+    "The mockup was created as part of the RBC Design Thinking Program term project. Design decisions were informed by user personas, educator concerns, and school board priorities around safe AI adoption."
+    ],
+    "author": "Daniel Kaminsky, Cynthia Li, Kiyana Salmi, Eric Wehlend",
+    "media": "/projects/tutorial.png",
+    "tags": ["Figma", "Design Thinking"],
+    "figma": "https://www.figma.com/design/COJerCwWoalQOlSdPpPqob/Tutorial-Figma?node-id=0-1&t=LCVhF8YTlRtB9RCU-1"
   },
   {
     "id": "4",
-    "title": "Sonic AI Composer",
-    "shortDescription": "Generate royalty-free background music for videos.",
-    "fullDescription": "Sonic AI Composer uses deep learning to generate unique musical tracks based on mood, tempo, and genre selection. Perfect for content creators looking for original, royalty-free background music. The backend runs on a custom Python server with TensorFlow.",
-    "author": "Daniel Kaminsky",
+    "title": "Tree Machine Learning Library",
+    "description": [
+    "A C++ machine learning library built from scratch as a final OOP course project. Implements classic models including Linear Regression, Logistic Regression, Random Forest, and XGBoost. Designed around core OOP patterns such as Factory, Builder, and Strategy to ensure modularity and extensibility.",
+    "Features a custom Dataset abstraction for loading CSV data and benchmarking models consistently. Includes a Qt-based GUI, command-line demos, and a full unit testing suite using GoogleTest."
+    ],
+    "author": "Daniel Kaminsky, Thomson Lam, Henrique Leite",
     "media": "/projects/sonic.gif",
-    "tags": ["Python", "TensorFlow", "Music"]
+    "tags": ["C++", "OOP", "Machine Learning", "Qt", "GoogleTest"],
+    "github": "https://github.com/DanielKaminsky05/TreeMachineLearningLibrary"
   },
   {
     "id": "5",
-    "title": "CryptoWatch Dashboard",
-    "shortDescription": "Real-time cryptocurrency tracking and portfolio management.",
-    "fullDescription": "A sleek, dark-mode dashboard for tracking cryptocurrency prices across multiple exchanges. Features include real-time WebSocket updates, portfolio performance charting, and customizable price alerts.",
+    "title": "Order Book",
+    "description": [
+        "A C++17 limit order book engine modeling a single-symbol exchange with price–time priority. Implements core exchange mechanics including limit orders, matching, partial fills, and crossing logic. Uses FIFO queues per price level and ordered containers to enforce correct execution semantics.",
+        "Explicit domain modeling for orders, fills, trades, and execution results. Designed with clear separation of concerns and thoroughly tested with unit and integration tests."
+    ],
     "author": "Daniel Kaminsky",
     "media": "/projects/crypto.gif",
-    "tags": ["Vue.js", "WebSockets", "Finance"]
+    "tags": ["C++", "GoogleTest", "GitHub Actions", "Unit Testing"],
+    "github": "https://github.com/DanielKaminsky05/OrderBook"
+
   }
 ]
