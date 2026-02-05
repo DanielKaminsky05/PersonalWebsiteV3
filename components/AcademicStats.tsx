@@ -71,9 +71,9 @@ export default function AcademicStats() {
   const selectedYearData = selectedIndex !== null ? data[selectedIndex] : null;
 
   return (
-    <div className="flex flex-col gap-4">
-        {/* Left: Chart */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[350px] flex flex-col justify-center outline-none [&_.recharts-surface]:outline-none [&_.recharts-cartesian-grid]:outline-none" tabIndex={-1}>
+    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[720px] flex flex-col">
+        {/* Top: Chart */}
+        <div className="flex-1 flex flex-col justify-center outline-none [&_.recharts-surface]:outline-none [&_.recharts-cartesian-grid]:outline-none" tabIndex={-1}>
             <h3 className="text-base font-semibold text-gray-200 mb-2 ml-2">Cumulative Average</h3>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
@@ -91,7 +91,7 @@ export default function AcademicStats() {
                             setSelectedIndex(Number(e.activeTooltipIndex));
                         }
                     }}
-                    className="cursor-pointer outline-none focus:outline-none"
+                    className="cursor-pointer outline-none focus:outline-none academic-chart"
                 >
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
                     <XAxis 
@@ -108,6 +108,7 @@ export default function AcademicStats() {
                         domain={[70, 100]} 
                         unit="%"
                         tick={{ fontSize: 12 }}
+                        width={30}
                     />
                     <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 2 }} />
                     
@@ -140,8 +141,11 @@ export default function AcademicStats() {
             <p className="text-center text-gray-500 text-sm mt-4">Click on a year point to view details</p>
         </div>
 
-        {/* Right: Details Panel */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[350px] overflow-hidden flex flex-col">
+        {/* Divider */}
+        <div className="h-px bg-white/10 my-4" />
+
+        {/* Bottom: Details Panel */}
+        <div className="flex-1 overflow-hidden flex flex-col">
             <AnimatePresence mode="wait">
                 {selectedYearData ? (
                     <motion.div 
@@ -158,12 +162,14 @@ export default function AcademicStats() {
                                 <p className="text-gray-500 text-xs">{selectedYearData.yearLabel}</p>
                             </div>
                             <div className="text-xs text-gray-500 font-mono text-center w-[80px]">My Mark</div>
-                            <div className="text-xs text-gray-500 font-mono text-right w-12">Class Avg</div>
+                            <div className="text-xs text-gray-500 font-mono text-right w-13">Class Avg</div>
                         </div>
 
                         <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
                             <div className="space-y-1">
-                                {selectedYearData.courses.map((course: any) => {
+                                {[...selectedYearData.courses]
+                                    .sort((a, b) => (b.grade || 0) - (a.grade || 0))
+                                    .map((course: any) => {
                                     const showTrend = course.grade !== null && course.average !== null;
                                     const isHigher = showTrend && course.grade >= course.average;
                                     const diff = showTrend ? course.grade - course.average : 0;
@@ -202,7 +208,7 @@ export default function AcademicStats() {
                                                 </div>
                                             </div>
 
-                                            <div className="text-sm font-mono text-gray-400 text-right w-12">
+                                            <div className="text-sm font-mono text-gray-400 text-right w-13">
                                                 {course.average !== null ? `${course.average}%` : '-'}
                                             </div>
                                         </div>
