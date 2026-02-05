@@ -17,6 +17,7 @@ export async function GET() {
     const query = `
       query {
         viewer {
+          login
           contributionsCollection {
             commitContributionsByRepository(maxRepositories: 5) {
               repository {
@@ -37,11 +38,15 @@ export async function GET() {
           repositories(first: 5, orderBy: {field: PUSHED_AT, direction: DESC}, ownerAffiliations: OWNER) {
             nodes {
               name
+              owner {
+                login
+              }
               defaultBranchRef {
                 target {
                   ... on Commit {
                     history(first: 20) {
                       nodes {
+                        oid
                         message
                         committedDate
                         additions
@@ -85,6 +90,7 @@ export async function GET() {
 
     const viewer = data.data.viewer;
     const repos = viewer.repositories.nodes;
+    const username = viewer.login;
 
     // Collect all commits from recent repositories
     const commits: any[] = [];
@@ -92,11 +98,14 @@ export async function GET() {
       if (repo.defaultBranchRef?.target?.history?.nodes) {
         repo.defaultBranchRef.target.history.nodes.forEach((commit: any) => {
           commits.push({
+            sha: commit.oid,
             message: commit.message,
             date: commit.committedDate,
             repository: repo.name,
+            owner: repo.owner.login,
             additions: commit.additions,
             deletions: commit.deletions,
+            url: `https://github.com/${repo.owner.login}/${repo.name}/commit/${commit.oid}`,
           });
         });
       }
