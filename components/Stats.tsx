@@ -2,6 +2,7 @@
 
 import AcademicStats from "./AcademicStats";
 import LeetCodeStatsContainer from "./LeetCode/LeetCodeStatsContainer";
+import GitHubStatsContainer from "./GitHubStatsContainer";
 
 export default function Stats() {
   return (
@@ -14,12 +15,10 @@ export default function Stats() {
                 {/* Left Column: Academic Stats */}
                 <AcademicStats />
 
-                {/* Right Column: Temp Placeholders */}
+                {/* Right Column: LeetCode & GitHub Stats */}
                 <div className="flex flex-col gap-4">
                     <LeetCodeStatsContainer userName="DanielKaminsky" />
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[350px] flex items-center justify-center">
-                         <p className="text-gray-500">Temp Component 2</p>
-                    </div>
+                    <GitHubStatsContainer />
                 </div>
             </div>
         </div>

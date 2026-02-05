@@ -19,7 +19,7 @@ export default function LeetCodeStatsContainer({ userName, loadingComponent }: P
             {/* Header with Toggle */}
             <div className="flex justify-between items-center mb-4">
                 <span className="text-base font-semibold text-gray-200">
-                    {showSubmissions ? "Recent Submissions" : "Solved Problems"}
+                    {showSubmissions ? "Recent Submissions" : "Leetcode Stats"}
                 </span>
                 
                 {/* Toggle Button */}
