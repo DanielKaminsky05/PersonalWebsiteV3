@@ -1,0 +1,59 @@
+{
+  "extracurriculars": {
+    "description": "Selected involvement beyond formal work experience.",
+    "groups": [
+      {
+        "category": "Technical Involvement",
+        "items": [
+          {
+            "role": "Developer",
+            "organization": "Western Cyber Society",
+            "years": "2024-2025",
+            "logo": "/logos/wcs.png",
+            "description": "Contributed to cybersecurity projects and participated in CTF competitions, developing secure web applications and learning penetration testing techniques."
+          },
+          {
+            "role": "Developer",
+            "organization": "Western Developer Society",
+            "years": "2024-2025",
+            "logo": "/logos/wds.png",
+            "description": "Built full-stack applications for student initiatives, collaborating with designers and other developers to create impactful solutions for the campus community."
+          },
+          {
+            "role": "Developer",
+            "organization": "Tech for Social Impact",
+            "years": "2025-2026",
+            "logo": "/logos/tsi.png",
+            "description": "Developed technology solutions for non-profit organizations, focusing on creating accessible and user-friendly platforms to amplify social good initiatives."
+          },
+          {
+            "role": "Developer",
+            "organization": "Western AI",
+            "years": "2025-2026",
+            "logo": "/logos/wai.png",
+            "description": "Worked on machine learning projects and AI research initiatives, exploring neural networks and natural language processing applications."
+          }
+        ]
+      },
+      {
+        "category": "Leadership & Service",
+        "items": [
+          {
+            "role": "Academic Director",
+            "organization": "Computer Science Undergraduate Society",
+            "years": "2024–2025",
+            "logo": "/logos/csus.png",
+            "description": "Organized academic workshops, exam review sessions, and mentorship programs to support CS students in their coursework and career development."
+          },
+          {
+            "role": "Vice President, Finance",
+            "organization": "Computer Science Undergraduate Society",
+            "years": "2025-2026",
+            "logo": "/logos/csus.png",
+            "description": "Managed the society's budget, secured sponsorships, and oversaw financial planning for events and initiatives serving over 1,000 CS students."
+          }
+        ]
+      }
+    ]
+  }
+}
