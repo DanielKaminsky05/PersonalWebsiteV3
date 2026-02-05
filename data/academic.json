@@ -1,0 +1,212 @@
+{
+  "academicRecord": [
+    {
+      "year": "2023-2024",
+      "term": "Fall/Winter",
+      "honors": ["Dean's Honor List"],
+      "courses": [
+        {
+          "code": "BUSINESS 1220E",
+          "name": "Introduction to Business",
+          "units": 1.0,
+          "grade": 74,
+          "average": 73
+        },
+        {
+          "code": "CALCULUS 1000A",
+          "name": "Calculus I",
+          "units": 0.5,
+          "grade": 91,
+          "average": 73
+        },
+        {
+          "code": "CLASSICS 1000",
+          "name": "Ancient Greece and Rome",
+          "units": 1.0,
+          "grade": 94,
+          "average": 72
+        },
+        {
+          "code": "COMPSCI 1026A",
+          "name": "Computer Science Fundamentals I",
+          "units": 0.5,
+          "grade": 98,
+          "average": 79
+        },
+        {
+          "code": "COMPSCI 1027B",
+          "name": "Computer Science Fundamentals II",
+          "units": 0.5,
+          "grade": 97,
+          "average": 67
+        },
+        {
+          "code": "MATH 1229A",
+          "name": "Methods of Matrix Algebra",
+          "units": 0.5,
+          "grade": 95,
+          "average": 78
+        },
+        {
+          "code": "MATH 1600B",
+          "name": "Linear Algebra I",
+          "units": 0.5,
+          "grade": 92,
+          "average": 72
+        },
+        {
+          "code": "PHILOSOPHY 1230B",
+          "name": "Reasoning & Critical Thinking",
+          "units": 0.5,
+          "grade": 87,
+          "average": 77
+        }
+      ]
+    },
+    {
+      "year": "2024-2025",
+      "term": "Fall/Winter",
+      "courses": [
+        {
+          "code": "BUSINESS 2257",
+          "name": "Accounting & Business Analysis",
+          "units": 1.0,
+          "grade": 87,
+          "average": 69
+        },
+        {
+          "code": "CLASSICS 2440",
+          "name": "Alexander the Great",
+          "units": 0.5,
+          "grade": 97,
+          "average": 79
+        },
+        {
+          "code": "COMPSCI 2208A",
+          "name": "Intro to Computer Organization & Architecture",
+          "units": 0.5,
+          "grade": 99,
+          "average": 71
+        },
+        {
+          "code": "COMPSCI 2209B",
+          "name": "Applied Logic for Computer Science",
+          "units": 0.5,
+          "grade": 99,
+          "average": 73
+        },
+        {
+          "code": "COMPSCI 2210A",
+          "name": "Data Structures & Algorithms",
+          "units": 0.5,
+          "grade": 95,
+          "average": 76
+        },
+        {
+          "code": "COMPSCI 2211A",
+          "name": "Software Tools & Systems Programming",
+          "units": 0.5,
+          "grade": 97,
+          "average": 86
+        },
+        {
+          "code": "COMPSCI 2212B",
+          "name": "Introduction to Software Engineering",
+          "units": 0.5,
+          "grade": 93,
+          "average": 84
+        },
+        {
+          "code": "COMPSCI 2214B",
+          "name": "Discrete Structures for Computer Science",
+          "units": 0.5,
+          "grade": 88,
+          "average": 74
+        },
+        {
+          "code": "HISTORY 2423F",
+          "name": "Russia & Ukraine: Past & Present",
+          "units": 0.5,
+          "grade": 84,
+          "average": 77
+        }
+      ]
+    },
+    {
+      "year": "2025-2026",
+      "term": "Fall/Winter",
+      "courses": [
+        {
+          "code": "COMPSCI 3305B",
+          "name": "Operating Systems",
+          "units": 0.5,
+          "grade": null,
+          "average": null
+        },
+        {
+          "code": "COMPSCI 3307A",
+          "name": "Object-Oriented Design & Analysis",
+          "units": 0.5,
+          "grade": 85,
+          "average": 82
+        },
+        {
+          "code": "COMPSCI 3319B",
+          "name": "Databases I",
+          "units": 0.5,
+          "grade": null,
+          "average": null
+        },
+        {
+          "code": "COMPSCI 3331A",
+          "name": "Theory of Computing",
+          "units": 0.5,
+          "grade": 84,
+          "average": 67
+        },
+        {
+          "code": "COMPSCI 3340B",
+          "name": "Analysis of Algorithms",
+          "units": 0.5,
+          "grade": null,
+          "average": null
+        },
+        {
+          "code": "COMPSCI 3342A",
+          "name": "Organization of Programming Languages",
+          "units": 0.5,
+          "grade": 90,
+          "average": 71
+        },
+        {
+          "code": "COMPSCI 3357A",
+          "name": "Computer Networks I",
+          "units": 0.5,
+          "grade": 93,
+          "average": 80
+        },
+        {
+          "code": "DATASCI 3000B",
+          "name": "Introduction to Machine Learning",
+          "units": 0.5,
+          "grade": null,
+          "average": null
+        },
+        {
+          "code": "STATS 2244A",
+          "name": "Statistics for Science",
+          "units": 0.5,
+          "grade": 78,
+          "average": 76
+        },
+        {
+          "code": "WRITING 2111G",
+          "name": "Introduction to Professional Writing",
+          "units": 0.5,
+          "grade": null,
+          "average": null
+        }
+      ]
+    }
+  ]
+}
