@@ -36,7 +36,6 @@ export default function Extracurriculars() {
           {groups.map((group, groupIndex) => (
             <div key={groupIndex}>
               <h3 className="text-xl font-semibold text-gray-200 mb-6 flex items-center gap-2">
-                <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
                 {group.category}
               </h3>
 
