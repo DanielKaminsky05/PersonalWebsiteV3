@@ -1,7 +1,7 @@
 "use client";
 
 import AcademicStats from "./AcademicStats";
-import SolvedProblemsStats from "./LeetCode/SolvedProblemsStats";
+import LeetCodeStatsContainer from "./LeetCode/LeetCodeStatsContainer";
 
 export default function Stats() {
   return (
@@ -16,9 +16,7 @@ export default function Stats() {
 
                 {/* Right Column: Temp Placeholders */}
                 <div className="flex flex-col gap-4">
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[350px] flex items-center justify-center">
-                        <SolvedProblemsStats userName="DanielKaminsky" />
-                    </div>
+                    <LeetCodeStatsContainer userName="DanielKaminsky" />
                     <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[350px] flex items-center justify-center">
                          <p className="text-gray-500">Temp Component 2</p>
                     </div>

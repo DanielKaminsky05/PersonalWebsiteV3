@@ -78,7 +78,7 @@ export default function AcademicStats() {
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={data}
-                    margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
+                    margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
                     onClick={(e) => {
                         if (e && e.activePayload && e.activePayload.length > 0) {
                           // Use the payload's index property we added
@@ -108,7 +108,7 @@ export default function AcademicStats() {
                         domain={[70, 100]} 
                         unit="%"
                         tick={{ fontSize: 12 }}
-                        width={30}
+                        width={40}
                     />
                     <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 2 }} />
                     

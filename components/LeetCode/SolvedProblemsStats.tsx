@@ -60,7 +60,6 @@ const SolvedProblemsStats = forwardRef<HTMLDivElement, Props>(({
         >
 
             <div id="solved_problems_stats_label" className="w-full flex justify-between items-center mb-4">
-                <span className="text-base font-semibold text-gray-200">{showUserName ? "LeetCode Stats" : "Solved Problems"}</span>
                 {showUserName && <span className="text-xs font-mono text-gray-400">Rank: #{data.rank}</span>}
             </div>
 
