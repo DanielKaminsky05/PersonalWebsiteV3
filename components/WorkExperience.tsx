@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import ExperienceCard from "./ExperienceCard";
 // We can import JSON directly in Next.js/Webpack environments
 import experienceData from "@/data/experience.json";
@@ -16,8 +16,16 @@ export default function WorkExperience() {
         </div>
 
         <div className="space-y-6">
-          {experienceData.map((experience) => (
-            <ExperienceCard key={experience.id} experience={experience} />
+          {experienceData.map((experience, index) => (
+            <motion.div
+              key={experience.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <ExperienceCard experience={experience} />
+            </motion.div>
           ))}
         </div>
       </div>
