@@ -73,7 +73,7 @@ export default function AcademicStats() {
   return (
     <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 h-[720px] flex flex-col">
         {/* Top: Chart */}
-        <div className="flex-1 flex flex-col justify-center outline-none [&_.recharts-surface]:outline-none [&_.recharts-cartesian-grid]:outline-none" tabIndex={-1}>
+        <div className="flex-1 min-w-0 min-h-0 flex flex-col justify-center outline-none [&_.recharts-surface]:outline-none [&_.recharts-cartesian-grid]:outline-none" tabIndex={-1}>
             <h3 className="text-base font-semibold text-gray-200 mb-2 ml-2">Cumulative Average</h3>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart

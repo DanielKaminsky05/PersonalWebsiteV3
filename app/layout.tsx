@@ -1,18 +1,17 @@
 
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PixelSnow from "@/components/PixelSnow";
+import type {Metadata} from 'next'
 
+export const metadata: Metadata = {
+  title: 'Daniel Kaminsky -- Portfolio',
+  description: 'Explore the portfolio of Daniel Kaminsky, including software projects, technical work, and experience.',
+  openGraph: {
+    title: 'Thank you for sharing my portfolio :)',
+    description: 'Check out my portfolio! I put a lot of effort into it.',
+  },
+}
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,

@@ -6,7 +6,7 @@ import GitHubStatsContainer from "./GitHubStatsContainer";
 
 export default function Stats() {
   return (
-    <section className="py-20 relative">
+    <section className="py-12 relative">
         <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 text-center mb-16">
             Stats

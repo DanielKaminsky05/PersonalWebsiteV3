@@ -18,7 +18,7 @@ interface Project {
 
 export default function Projects() {
   return (
-    <section className="py-12 md:py-24 relative">
+    <section className="py-8 md:py-12 relative">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 text-center pb-12">
             Projects

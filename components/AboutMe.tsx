@@ -46,7 +46,7 @@ export default function AboutMe() {
   };
 
   return (
-    <section ref={containerRef} className="relative w-full py-24 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
+    <section ref={containerRef} className="relative w-full py-12 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
       {/* Background subtle binary decoration - changed to gray/white */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none flex flex-col items-center justify-center overflow-hidden select-none">
         <div className="text-xs text-white font-mono break-all w-full max-w-6xl text-center leading-loose">

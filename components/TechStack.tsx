@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function TechStack() {
   return (
-    <section className="py-10    relative">
+    <section className="py-8 relative">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 text-center mb-8 md:mb-16">
           Tech Stack
