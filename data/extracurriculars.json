@@ -16,7 +16,7 @@
             "organization": "Western Developer Society",
             "years": "2024-2025",
             "logo": "/logos/wds.png",
-            "description": "Built a website for local London city councillor David Ferreira."
+            "description": "Built a website for local London city councillor David Ferreira, collaborating with designers and developers in a team environment."    
           },
           {
             "role": "Developer",
@@ -30,7 +30,8 @@
             "organization": "Western AI",
             "years": "2025-2026",
             "logo": "/logos/wai.png",
-           "description": "Worked on machine learning projects and AI research initiatives, exploring neural networks and natural language processing applications."
+            "description": "Developed neural-apnea-triage, a machine learning model that detects sleep apnea from ECG (electrocardiogram) data. Achieved ~90% classification accuracy and contributed to a research paper detailing data preprocessing, feature engineering, and model architecture."
+
           }
         ]
       },
