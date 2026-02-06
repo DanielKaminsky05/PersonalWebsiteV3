@@ -22,7 +22,7 @@ export default function Footer() {
               href="https://linkedin.com/in/daniel-kaminsky"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-200"
+              className="text-gray-400 text-sm hover:text-white transition-colors duration-200"
             >
               LinkedIn
             </a>

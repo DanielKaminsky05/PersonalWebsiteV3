@@ -1,0 +1,104 @@
+---
+title: "How I Built My Portfolio with Next.js"
+date: "2026-02-05"
+excerpt: "A deep dive into the architecture and design decisions behind my portfolio website, including the tech stack, animations, and performance optimizations."
+tags: ["Next.js", "TypeScript", "Web Development"]
+featured: true
+---
+
+# How I Built My Portfolio with Next.js
+
+Building a portfolio website is more than just showcasing projects—it's about creating an experience that reflects your skills and personality. Here's how I approached building mine with Next.js 16.
+
+## The Tech Stack
+
+I chose **Next.js** for several key reasons:
+
+- **Server-side rendering** for better SEO and performance
+- **File-based routing** for clean URL structure
+- **Built-in optimization** for images and fonts
+- **TypeScript support** out of the box
+
+### Key Technologies
+
+```typescript
+const techStack = {
+  framework: "Next.js 16",
+  language: "TypeScript",
+  styling: "Tailwind CSS",
+  animations: "Framer Motion",
+  deployment: "Vercel"
+};
+```
+
+## Design Philosophy
+
+I wanted the site to feel **modern and interactive** without being overwhelming. The key principles were:
+
+1. **Glassmorphism aesthetic** - Subtle transparency and blur effects
+2. **Smooth animations** - Scroll-triggered reveals and transitions
+3. **Dark theme** - Easy on the eyes, professional look
+4. **Responsive design** - Works beautifully on all devices
+
+## Standout Features
+
+### 1. Animated About Me Section
+
+One of my favorite features is the animated "About Me" section that cycles through quotes and personal statements. It uses Framer Motion for smooth transitions and starts playing when you scroll to it.
+
+```tsx
+const [isPlaying, setIsPlaying] = useState(false);
+const isInView = useInView(containerRef, { once: true, amount: 0.4 });
+
+useEffect(() => {
+  if (isInView && !isPlaying) {
+    setIsPlaying(true);
+  }
+}, [isInView]);
+```
+
+### 2. Live Data Integration
+
+The stats section pulls **real-time data** from:
+- GitHub API (commits, repositories)
+- LeetCode API (problems solved, ranking)
+- Academic records (GPA trends)
+
+This keeps the portfolio dynamic and up-to-date without manual updates.
+
+### 3. Scroll Animations
+
+Every section has a subtle fade-in and slide-up animation as you scroll. This creates a sense of progression and keeps the experience engaging.
+
+## Performance Optimizations
+
+Performance was a top priority:
+
+- **Lazy loading** for images and components
+- **Code splitting** for faster initial load
+- **Optimized fonts** using next/font
+- **Static generation** where possible
+
+The result? **Lighthouse scores of 95+** across the board.
+
+## Lessons Learned
+
+Building this portfolio taught me:
+
+1. **Animation timing matters** - Too fast feels jarring, too slow feels sluggish
+2. **Content is king** - Beautiful design means nothing without substance
+3. **Iterate based on feedback** - Show it to people and listen to their reactions
+4. **Performance is UX** - A slow site kills the experience
+
+## What's Next?
+
+I'm planning to add:
+- **Case studies** for my top projects
+- **Blog section** (you're reading it!)
+- **Personal/Professional mode toggle** for different audiences
+
+---
+
+If you're building your own portfolio, my advice: **make it yours**. Don't just copy templates—add features that showcase your unique skills and personality.
+
+Check out the [source code on GitHub](https://github.com/DanielKaminsky05/PersonalWebsiteV3) to see how it all works!
