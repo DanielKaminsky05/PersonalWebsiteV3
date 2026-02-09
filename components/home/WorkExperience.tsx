@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import ExperienceCard from "./ExperienceCard";
+import ExperienceCard from "../ui/ExperienceCard";
+import { Briefcase } from "lucide-react";
 // We can import JSON directly in Next.js/Webpack environments
 import experienceData from "@/data/experience.json";
 

@@ -1,13 +1,13 @@
-import Hero from "@/components/Hero";
-import AboutMe from "@/components/AboutMe";
-import WorkExperience from "@/components/WorkExperience";
-import TechStack from "@/components/TechStack";
-import Projects from "@/components/Projects";
-import Stats from "@/components/Stats";
-import Extracurriculars from "@/components/Extracurriculars";
-import Writings from "@/components/Writings";
-import Footer from "@/components/Footer";
-import PixelSnow from "@/components/PixelSnow";
+import Hero from "@/components/home/Hero";
+import AboutMe from "@/components/home/AboutMe";
+import WorkExperience from "@/components/home/WorkExperience";
+import TechStack from "@/components/home/TechStack";
+import Projects from "@/components/home/Projects";
+import Stats from "@/components/home/Stats";
+import Extracurriculars from "@/components/home/Extracurriculars";
+import Writings from "@/components/home/Writings";
+import Footer from "@/components/layout/Footer";
+import PixelSnow from "@/components/ui/PixelSnow";
 import { getAllPosts } from "@/lib/blog";
 
 export default async function Home() {

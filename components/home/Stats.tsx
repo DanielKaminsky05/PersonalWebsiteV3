@@ -1,8 +1,8 @@
 "use client";
 
-import AcademicStats from "./AcademicStats";
-import LeetCodeStatsContainer from "./LeetCode/LeetCodeStatsContainer";
-import GitHubStatsContainer from "./GitHubStatsContainer";
+import AcademicStats from "../stats/AcademicStats";
+import LeetCodeStatsContainer from "../stats/LeetCode/LeetCodeStatsContainer";
+import GitHubStatsContainer from "../stats/GitHubStatsContainer";
 
 export default function Stats() {
   return (

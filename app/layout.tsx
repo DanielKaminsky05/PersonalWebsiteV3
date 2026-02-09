@@ -1,6 +1,6 @@
 
 import "./globals.css";
-import PixelSnow from "@/components/PixelSnow";
+import PixelSnow from "@/components/ui/PixelSnow";
 import type {Metadata} from 'next'
 
 export const metadata: Metadata = {
