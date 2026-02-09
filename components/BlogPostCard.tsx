@@ -18,11 +18,11 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
       <div className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-white/20 h-full flex flex-col">
         {/* Header */}
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors">
+          <h3 className="text-xl font-bold mb-3 group-hover:opacity-90 transition-colors" style={{color: '#E5E7EB'}}>
             {post.title}
           </h3>
           
-          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
+          <p className="text-sm leading-relaxed mb-4 line-clamp-3" style={{color: '#C9CDD3'}}>
             {post.excerpt}
           </p>
         </div>

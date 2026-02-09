@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
-import rehypePrettyCode from "rehype-pretty-code";
+import rehypeHighlight from "rehype-highlight";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -49,12 +49,12 @@ export default async function BlogPostPage({ params }: PageProps) {
   });
 
   return (
-    <main className="min-h-screen py-12 px-4">
+    <main className="min-h-screen py-12 px-4 bg-[#121212]">
       <article className="max-w-4xl mx-auto">
         {/* Back Button */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors mb-8 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span>Back to Blog</span>
@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Post Header */}
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={{color: '#E5E7EB'}}>
             {post.title}
           </h1>
 
@@ -97,30 +97,22 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
 
         {/* Post Content */}
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-lg max-w-none [&_pre]:!bg-white/5 [&_pre]:!border-0">
           <MDXRemote
             source={post.content}
             options={{
               mdxOptions: {
-                rehypePlugins: [
-                  [
-                    rehypePrettyCode,
-                    {
-                      theme: "github-dark",
-                   
-                    },
-                  ],
-                ],
+                rehypePlugins: [rehypeHighlight],
               },
             }}
             components={{
-              h1: (props) => <h1 className="text-4xl font-bold text-white mt-8 mb-4" {...props} />,
-              h2: (props) => <h2 className="text-3xl font-bold text-white mt-8 mb-4" {...props} />,
-              h3: (props) => <h3 className="text-2xl font-bold text-white mt-6 mb-3" {...props} />,
-              h4: (props) => <h4 className="text-xl font-bold text-white mt-4 mb-2" {...props} />,
-              p: (props) => <p className="mb-4 leading-relaxed text-gray-300" {...props} />,
+              h1: (props) => <h1 className="text-4xl font-bold mt-8 mb-4" style={{color: '#E5E7EB'}} {...props} />,
+              h2: (props) => <h2 className="text-3xl font-bold mt-8 mb-4" style={{color: '#E5E7EB'}} {...props} />,
+              h3: (props) => <h3 className="text-2xl font-bold mt-6 mb-3" style={{color: '#E5E7EB'}} {...props} />,
+              h4: (props) => <h4 className="text-xl font-bold mt-4 mb-2" style={{color: '#E5E7EB'}} {...props} />,
+              p: (props) => <p className="mb-4 leading-relaxed" style={{color: '#C9CDD3'}} {...props} />,
               a: (props) => <a className="text-blue-400 hover:text-blue-300 underline transition-colors" {...props} />,
-              strong: (props) => <strong className="text-white font-semibold" {...props} />,
+              strong: (props) => <strong className="font-semibold" style={{color: '#E5E7EB'}} {...props} />,
               code: (props) => {
                 // Check if code is inside a pre (code block) or standalone (inline code)
                 const isInline = !props.className?.includes('language-');
@@ -131,9 +123,9 @@ export default async function BlogPostPage({ params }: PageProps) {
                 return <code {...props} />;
               },
               pre: (props) => <pre className="bg-white/5 rounded-xl p-4 overflow-x-auto my-6" {...props} />,
-              ul: (props) => <ul className="list-disc list-inside mb-4 space-y-2" {...props} />,
-              ol: (props) => <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />,
-              li: (props) => <li className="text-gray-300" {...props} />,
+              ul: (props) => <ul className="list-disc list-inside mb-4 space-y-2" style={{color: '#C9CDD3'}} {...props} />,
+              ol: (props) => <ol className="list-decimal list-inside mb-4 space-y-2" style={{color: '#C9CDD3'}} {...props} />,
+              li: (props) => <li style={{color: '#C9CDD3'}} {...props} />,
               blockquote: (props) => <blockquote className="border-l-4 border-white/20 pl-4 italic text-gray-400 my-6" {...props} />,
               hr: (props) => <hr className="border-white/10 my-8" {...props} />,
             }}
@@ -147,7 +139,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all duration-200 hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-gray-200 hover:text-white transition-all duration-200 hover:scale-105"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Read More Posts</span>

@@ -35,12 +35,12 @@ export default function BlogList({ posts, tags }: BlogListProps) {
             placeholder="Search posts by title, topic, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all"
+            className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-full text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 transition-all"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors text-sm"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200 transition-colors text-sm"
             >
               Clear
             </button>
@@ -77,7 +77,7 @@ export default function BlogList({ posts, tags }: BlogListProps) {
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="mt-4 text-white hover:underline"
+              className="mt-4 text-gray-300 hover:text-white hover:underline"
             >
               Clear search
             </button>

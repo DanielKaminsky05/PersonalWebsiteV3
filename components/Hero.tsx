@@ -18,11 +18,9 @@ export default function Hero() {
           {/* @ts-expect-error - TextType inferred props are too strict */}
           <TextType
             text={[
-              "I am a builder",
-              "I enjoy hard problems",
-              "I learn fast",
-              "I turn ideas into code",
-              "I build with users in mind"
+              "Welcome to my personal website",
+              "I love doing Hackathons",
+              "inspirational quote"
             ]}
             typingSpeed={100}
             deletingSpeed={50}
