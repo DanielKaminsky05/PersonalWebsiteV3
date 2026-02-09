@@ -5,10 +5,14 @@ import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Stats from "@/components/Stats";
 import Extracurriculars from "@/components/Extracurriculars";
+import Writings from "@/components/Writings";
 import Footer from "@/components/Footer";
 import PixelSnow from "@/components/PixelSnow";
+import { getAllPosts } from "@/lib/blog";
 
-export default function Home() {
+export default async function Home() {
+  const posts = getAllPosts();
+
   return (
     <>
       <PixelSnow 
@@ -33,6 +37,7 @@ export default function Home() {
         <TechStack />
         <Stats />
         <Extracurriculars />
+        <Writings posts={posts} />
         <Footer />
       </main>
     </>
