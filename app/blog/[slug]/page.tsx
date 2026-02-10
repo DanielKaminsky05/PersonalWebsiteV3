@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import rehypeHighlight from "rehype-highlight";
+import BlogBackButton from "@/components/blog/BlogBackButton";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -52,13 +53,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <main className="min-h-screen py-12 px-4 bg-[#121212]">
       <article className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors mb-8 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Blog</span>
-        </Link>
+        <BlogBackButton />
 
         {/* Post Header */}
         <header className="mb-12">

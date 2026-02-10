@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Github, Linkedin, ArrowRight, ChevronDown } from "lucide-react";
 import TextType from "@/components/ui/TextType";
 
@@ -28,7 +29,7 @@ export default function Hero() {
           />
         </div>
         
-        <div className="flex items-center justify-center md:justify-start gap-4">
+        <div className="flex items-center justify-center md:justify-start gap-4 pb-10">
           <a 
             href="/resume.pdf" 
             target="_blank" 
@@ -63,7 +64,7 @@ export default function Hero() {
       </div>
       
       <div className="w-full md:flex-1 relative flex justify-center items-center">
-        <div className="relative w-48 h-48 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl ">
+        <div className="relative w-48 h-48 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl">
           <Image
             src="/Headshot.png"
             alt="Daniel - CS @ Western"
@@ -74,7 +75,15 @@ export default function Hero() {
           />
         </div>
       </div>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer">
+      <div 
+        onClick={() => {
+          const aboutSection = document.getElementById('about');
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+      >
         <ChevronDown className="w-8 h-8 text-gray-400 hover:text-white transition-colors" />
       </div>
     </section>

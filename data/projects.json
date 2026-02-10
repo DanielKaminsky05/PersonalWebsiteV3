@@ -7,7 +7,7 @@
       "SecureFrame is an AI-powered video privacy system that uses YOLOv8 object detection and AES encryption to selectively secure sensitive entities in video footage. Objects are detected and tracked across frames, enabling precise, entity-level protection. Encryption is reversible, allowing authorized users to restore original video content. Designed as a secure alternative to traditional blurring or redaction techniques."
     ],
     "author": "Daniel Kaminsky, Rishabh Jain, David Vera, Kethy Hu, Tazrin Khalid",
-    "media": "/projects/secureframeDemo.mp4",
+    "media": "/projects/SecureframeDemo.mp4",
     "tags": [
       "YOLOv8",
       "React",

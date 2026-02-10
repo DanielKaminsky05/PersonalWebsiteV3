@@ -52,7 +52,7 @@ export default function ExperienceCard({ experience }: { experience: Experience 
               <p className="text-base font-semibold" style={{ color: accentColor }}>{experience.company}</p>
             </div>
             <span 
-              className="text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap border"
+              className="text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap border w-fit"
               style={{ 
                 color: accentColor,
                 backgroundColor: `${accentColor}10`,

@@ -11,6 +11,8 @@ export default function AboutMe() {
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.4 });
@@ -45,8 +47,44 @@ export default function AboutMe() {
     setIsPlaying(!isPlaying);
   };
 
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50 
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e: React.TouchEvent) => setTouchEnd(e.targetTouches[0].clientX)
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    
+    if (isLeftSwipe || isRightSwipe) {
+        setIsPlaying(false);
+        if (isLeftSwipe) {
+          // Next slide
+          setCurrentIndex((prev) => (prev + 1) % aboutMeData.length);
+        } else {
+          // Previous slide
+          setCurrentIndex((prev) => (prev - 1 + aboutMeData.length) % aboutMeData.length);
+        }
+    }
+  }
+
   return (
-    <section ref={containerRef} className="relative w-full py-12 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
+    <section 
+        id="about"
+        ref={containerRef} 
+        className="relative w-full py-12 overflow-hidden min-h-[500px] flex flex-col items-center justify-center"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+    >
       {/* Background subtle binary decoration - changed to gray/white */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none flex flex-col items-center justify-center overflow-hidden select-none">
         <div className="text-xs text-white font-mono break-all w-full max-w-6xl text-center leading-loose">
