@@ -78,7 +78,7 @@ export default async function ExperiencePage({
                   h2: (props) => <h2 className="text-3xl font-bold mt-8 mb-4" style={{color: '#E5E7EB'}} {...props} />,
                   h3: (props) => <h3 className="text-2xl font-bold mt-6 mb-3" style={{color: '#E5E7EB'}} {...props} />,
                   h4: (props) => <h4 className="text-xl font-bold mt-4 mb-2" style={{color: '#E5E7EB'}} {...props} />,
-                  p: (props) => <p className="mb-4 leading-relaxed" style={{color: '#C9CDD3'}} {...props} />,
+                  p: (props) => <div className="mb-4 leading-relaxed" style={{color: '#C9CDD3'}} {...props} />,
                   a: (props) => <a className="text-blue-400 hover:text-blue-300 underline transition-colors" {...props} />,
                   strong: (props) => <strong className="font-semibold" style={{color: '#E5E7EB'}} {...props} />,
                   ul: (props) => <ul className="list-disc list-inside mb-4 space-y-2" style={{color: '#C9CDD3'}} {...props} />,
@@ -86,6 +86,20 @@ export default async function ExperiencePage({
                   li: (props) => <li style={{color: '#C9CDD3'}} {...props} />,
                   blockquote: (props) => <blockquote className="border-l-4 border-white/20 pl-4 italic text-gray-400 my-6" {...props} />,
                   hr: (props) => <hr className="border-white/10 my-8" {...props} />,
+                  img: (props) => (
+                    <figure className="my-8">
+                      <img 
+                        {...props} 
+                        className="rounded-xl border border-white/10 w-full h-auto" 
+                        alt={props.alt || ""} 
+                      />
+                      {props.alt && (
+                        <figcaption className="text-center text-sm text-gray-500 mt-2 italic">
+                          {props.alt}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ),
                 }}
               />
           </div>
