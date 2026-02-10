@@ -2,24 +2,21 @@
 
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
 
-export default function BlogBackButton() {
+function BlogBackButtonContent() {
+  const searchParams = useSearchParams();
   const [backLink, setBackLink] = useState("/blog");
   const [label, setLabel] = useState("Back to Blog");
 
   useEffect(() => {
-    // Check if the user came from the home page
-    if (typeof window !== "undefined" && document.referrer) {
-      const referrerUrl = new URL(document.referrer);
-      
-      // If referrer is the home page (root of the current origin)
-      if (referrerUrl.origin === window.location.origin && referrerUrl.pathname === "/") {
-        setBackLink("/");
-        setLabel("Back to Home");
-      }
+    const from = searchParams.get("from");
+    if (from === "home") {
+      setBackLink("/");
+      setLabel("Back to Home");
     }
-  }, []);
+  }, [searchParams]);
 
   return (
     <Link
@@ -31,3 +28,12 @@ export default function BlogBackButton() {
     </Link>
   );
 }
+
+export default function BlogBackButton() {
+  return (
+    <Suspense fallback={null}>
+      <BlogBackButtonContent />
+    </Suspense>
+  );
+}
+

@@ -4,17 +4,20 @@ import { BlogPostMetadata } from "@/lib/blog";
 
 interface BlogPostCardProps {
   post: BlogPostMetadata;
+  from?: string;
 }
 
-export default function BlogPostCard({ post }: BlogPostCardProps) {
+export default function BlogPostCard({ post, from }: BlogPostCardProps) {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
+  const href = from ? `/blog/${post.slug}?from=${from}` : `/blog/${post.slug}`;
+
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={href}>
       <div className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-white/20 h-full flex flex-col">
         {/* Header */}
         <div className="flex-1">

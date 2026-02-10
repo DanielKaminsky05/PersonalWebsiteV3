@@ -27,7 +27,7 @@ export default function Writings({ posts }: WritingsProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <BlogPostCard post={post} />
+              <BlogPostCard post={post} from="home" />
             </motion.div>
           ))}
         </div>
