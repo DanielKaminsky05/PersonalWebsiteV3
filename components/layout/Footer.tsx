@@ -4,7 +4,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between gap-4 text-center mx-4">
           {/* Copyright */}
-          <p className="text-gray-400 text-sm">
+          {/* Copyright */}
+          <p className="text-gray-400 text-xs md:text-sm">
             © Daniel Kaminsky all rights reserved
           </p>
           
@@ -14,7 +15,7 @@ export default function Footer() {
               href="https://github.com/DanielKaminsky05"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 text-sm hover:text-white transition-colors duration-200"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-colors duration-200"
             >
               GitHub
             </a>
@@ -22,7 +23,7 @@ export default function Footer() {
               href="https://linkedin.com/in/daniel-kaminsky"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 text-sm hover:text-white transition-colors duration-200"
+              className="text-gray-400 text-xs md:text-sm hover:text-white transition-colors duration-200"
             >
               LinkedIn
             </a>
