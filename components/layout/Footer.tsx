@@ -20,7 +20,7 @@ export default function Footer() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/daniel-kaminsky"
+              href="https://www.linkedin.com/in/danielkaminsky-/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 text-xs md:text-sm hover:text-white transition-colors duration-200"
