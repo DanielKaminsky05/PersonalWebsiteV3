@@ -30,6 +30,7 @@ interface ChartDataPoint {
   classCumulativeAvg: number;
   courses: Course[];
   term: string;
+  yearLabel: string;
 }
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -79,7 +80,7 @@ export default function AcademicStats() {
                 <LineChart
                     data={data}
                     margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
-                    onClick={(e) => {
+                    onClick={(e: any) => {
                         if (e && e.activePayload && e.activePayload.length > 0) {
                           // Use the payload's index property we added
                           const idx = e.activePayload[0].payload.index;
