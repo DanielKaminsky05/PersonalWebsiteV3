@@ -42,7 +42,7 @@
       "RiskGuard overlays directly onto brokerage interfaces, interacting with the DOM to monitor trading activity. It identifies psychological pitfalls like Revenge Trading and Overtrading, using a Flask/Snowflake backend for analysis and Gemini to provide AI-driven coaching. The system tracks 'Capital Preserved' to quantify the value of disciplined trading."
     ],
     "author": "Daniel Kaminsky, David Vera, Anthony Stefanuto",
-    "media": "/projects/riskguardDemo.mp4",
+    "media": "/projects/riskguard.jpg",
     "tags": [
       "React",
       "Flask",
