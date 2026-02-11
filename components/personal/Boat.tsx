@@ -11,12 +11,12 @@ interface BoatProps {
 
 export default function Boat({ targetPosition }: BoatProps) {
   const meshRef = useRef<any>(null);
-  const currentPos = useMemo(() => new Vector3(0, 0, 0), []);
+  const currentPos = useMemo(() => new Vector3(40, 0, 40), []);
   const velocity = useMemo(() => new Vector3(0, 0, 0), []);
   const worldTarget = useMemo(() => new Vector3(...targetPosition), [targetPosition]);
   
   // Physics parameters
-  const MAX_SPEED = 3.0;
+  const MAX_SPEED = 0;
   const ACCELERATION = 2.0;
   const TURN_SPEED = 2.5;
   const STOPPING_DISTANCE = 0.1;
@@ -91,7 +91,7 @@ export default function Boat({ targetPosition }: BoatProps) {
         <primitive 
             object={scene} 
             position={[0, 0, 0]} 
-            scale={0.5} 
+            scale={1.5} 
             rotation={[0, Math.PI, 0]} 
         />
       </group>

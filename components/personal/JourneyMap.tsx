@@ -18,7 +18,7 @@ const locations: MapLocation[] = [
 
 export default function JourneyMap() {
   const [activeLocation, setActiveLocation] = useState<LocationId | null>(null);
-  const [targetPosition, setTargetPosition] = useState<[number, number, number]>([0, 0, 0]);
+  const [targetPosition, setTargetPosition] = useState<[number, number, number]>([0, 50, 50]);
 
   const handleLocationClick = (location: MapLocation) => {
     setActiveLocation(location.id);
@@ -27,10 +27,10 @@ export default function JourneyMap() {
 
   return (
     <div className="w-full h-screen relative bg-[#e0f7fa]">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 10, 10], fov: 45 }}>
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [50, 50, 50], fov: 30 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
           <Scene />
-          <Islands locations={locations} />
+          <Islands />
           <MapPath locations={locations} />
           <Boat targetPosition={targetPosition} />
           <MapLocations locations={locations} onLocationClick={handleLocationClick} activeLocation={activeLocation} />

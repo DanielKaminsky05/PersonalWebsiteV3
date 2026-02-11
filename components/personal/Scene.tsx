@@ -6,8 +6,8 @@ export default function Scene() {
   useFrame((state) => {
     // Subtle camera parallax based on mouse
     const t = state.pointer;
-    state.camera.position.x = MathUtils.lerp(state.camera.position.x, t.x * 2, 0.05);
-    state.camera.position.z = MathUtils.lerp(state.camera.position.z, 10 + t.y * 2, 0.05);
+    state.camera.position.x = MathUtils.lerp(state.camera.position.x, 50 + t.x * 2, 0.05);
+    state.camera.position.z = MathUtils.lerp(state.camera.position.z, 50 + t.y * 2, 0.05);
     state.camera.lookAt(0, 0, 0);
   });
 
@@ -23,9 +23,6 @@ export default function Scene() {
       />
       
       <Environment preset="city" />
-      
-      {/* Fog blends into map paper color */}
-      <fog attach="fog" args={['#f4e4bc', 10, 50]} />
 
       {/* The Map Surface (Parchment) */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
