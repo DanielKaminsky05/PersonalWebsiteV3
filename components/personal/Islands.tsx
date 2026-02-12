@@ -12,7 +12,7 @@ export default function Islands() {
 
   // Enable shadows for both islands
   useMemo(() => {
-    [island1, island2, island3].forEach((scene) => {
+    [island1, island2, island3, island4].forEach((scene) => {
       scene.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           child.castShadow = true;
@@ -26,27 +26,27 @@ export default function Islands() {
     <group>
       <primitive
         object={island1}
-        position={[0, 0.5, 20]}
-        rotation={[0, -Math.PI / 4, 0]}
+        position={[0, 0, -20]} // Right
+        rotation={[0, -1.5 * Math.PI / 4, 0]}
         scale={1}
       />
       <primitive
         object={island2}
-        position={[20, 0, 0]} // Moved further away to prevent overlap
+        position={[5, 0, 25]} // Left
         rotation={[0, Math.PI / 4, 0]}
         scale={1}
       />
       <primitive
         object={island3}
-        position={[0, 0.3, 0]} // Moved further away to prevent overlap
-        rotation={[0, Math.PI / 4, 0]}
+        position={[-20, 0, 0]} // Top
+        rotation={[0, 2 * Math.PI / 4, 0]}
         scale={1}
       />
 
        <primitive
         object={island4}
-        position={[-30, 0.3, 0]} // Moved further away to prevent overlap
-        rotation={[0, Math.PI / 4, 0]}
+        position={[25, 0, 0]} // Bottom
+        rotation={[0, 1.8* Math.PI / 4, 0]}
         scale={1}
       />
     </group>
@@ -55,3 +55,5 @@ export default function Islands() {
 
 useGLTF.preload("/models/Island1.glb");
 useGLTF.preload("/models/Island2.glb");
+useGLTF.preload("/models/Island3.glb");
+useGLTF.preload("/models/Island4.glb");

@@ -90,7 +90,7 @@ export default function Boat({ targetPosition }: BoatProps) {
       <group ref={meshRef}>
         <primitive 
             object={scene} 
-            position={[0, 0, 0]} 
+            position={[0, 20, 0]} 
             scale={1.5} 
             rotation={[0, Math.PI, 0]} 
         />

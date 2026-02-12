@@ -9,11 +9,11 @@ import MapPath from "./MapPath";
 import Islands from "./Islands";
 
 const locations: MapLocation[] = [
-  { id: "origins", label: "Origins", position: [-4, 0, 2], content: <div>Where I started...</div> },
-  { id: "projects", label: "Projects", position: [-2, 0, -4], content: <div>Cool stuff I built...</div> },
-  { id: "leadership", label: "Leadership", position: [3, 0, -3], content: <div>Leading teams...</div> },
-  { id: "philosophy", label: "Philosophy", position: [4, 0, 3], content: <div>How I think...</div> },
-  { id: "hobbies", label: "Hobbies", position: [0, 0, 5], content: <div>What I do for fun...</div> },
+  { id: "origins", label: "Origins", position: [15, 0, 20], content: <div>Where I started...</div> },
+  { id: "projects", label: "Projects", position: [-10, 0, 20], content: <div>Cool stuff I built...</div> },
+  { id: "leadership", label: "Leadership", position: [-4, 0, -3], content: <div>Leading teams...</div> },
+  { id: "philosophy", label: "Philosophy", position: [15, 0, -12], content: <div>How I think...</div> },
+  { id: "hobbies", label: "Hobbies", position: [20, 0, 5], content: <div>What I do for fun...</div> },
 ];
 
 export default function JourneyMap() {
@@ -27,13 +27,12 @@ export default function JourneyMap() {
 
   return (
     <div className="w-full h-screen relative bg-[#e0f7fa]">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [50, 35, 50], fov: 20 }}>
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [40, 30, 50], fov: 25 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
           <Scene />
           <Islands />
-          <MapPath locations={locations} />
           <Boat targetPosition={targetPosition} />
-          <MapLocations locations={locations} onLocationClick={handleLocationClick} activeLocation={activeLocation} />
+          <MapLocations locations={locations}/>
         </Suspense>
       </Canvas>
       <Loader />

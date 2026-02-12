@@ -36,7 +36,7 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
         onPointerOut={() => setHovered(false)}
         rotation={[0, Math.PI / 4, 0]} // Rotate to make it an X
         position={[0, 0.02, 0]} // Just above paper
-        scale={hovered || isActive ? 1.2 : 1}
+        scale={hovered || isActive ? 3.2 : 3}
       >
         <mesh rotation={[0, 0, 0]} position={[0, 0, 0]}>
             <boxGeometry args={[0.8, 0.05, 0.15]} />
