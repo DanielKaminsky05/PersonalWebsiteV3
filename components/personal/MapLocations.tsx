@@ -28,12 +28,20 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
   const color = isActive ? "#ef4444" : (hovered ? "#dc2626" : "#7f1d1d"); // Red ink colors
 
   return (
-    <group position={location.position}>
+    <group 
+      position={location.position}
+      onClick={(e) => { e.stopPropagation(); onClick(); }}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+    >
+      {/* Invisible Hitbox */}
+      <mesh visible={false}>
+         <boxGeometry args={[3, 2, 3]} />
+         <meshBasicMaterial transparent opacity={0} />
+      </mesh>
+
       {/* "X" Mark Geometry */}
       <group 
-        onClick={(e) => { e.stopPropagation(); onClick(); }}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
         rotation={[0, Math.PI / 4, 0]} // Rotate to make it an X
         position={[0, 0.02, 0]} // Just above paper
         scale={hovered || isActive ? 3.2 : 3}

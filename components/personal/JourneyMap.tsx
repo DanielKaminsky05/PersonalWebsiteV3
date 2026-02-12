@@ -1,5 +1,5 @@
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { Suspense, useState, useEffect } from "react";
 import Scene from "./Scene";
 import Boat from "./Boat";
 import MapLocations from "./MapLocations";
@@ -7,6 +7,7 @@ import { Html, Loader } from "@react-three/drei";
 import { MapLocation, LocationId } from "./types";
 import MapPath from "./MapPath";
 import Islands from "./Islands";
+import { Vector3 } from "three";
 
 const locations: MapLocation[] = [
   { id: "origins", label: "Origins", position: [15, 0, 20], content: <div>Where I started...</div> },
@@ -15,6 +16,32 @@ const locations: MapLocation[] = [
   { id: "philosophy", label: "Philosophy", position: [15, 0, -12], content: <div>How I think...</div> },
   { id: "hobbies", label: "Hobbies", position: [20, 0, 5], content: <div>What I do for fun...</div> },
 ];
+
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+  
+  useEffect(() => {
+    const aspect = size.width / size.height;
+    
+    // Default position
+    const currentPos = new Vector3(50, 30, 50);
+
+    if (aspect < 1) {
+        // Portrait mode - move camera further back/up to fit map
+        // Roughly 1.8x distance seems appropriate for typical phone screens
+        camera.position.set(currentPos.x * 1.8, currentPos.y * 1.8, currentPos.z * 1.8);
+    } else {
+        // Reset to default
+        camera.position.set(currentPos.x, currentPos.y, currentPos.z);
+    }
+    
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+
+  }, [camera, size]);
+
+  return null;
+}
 
 export default function JourneyMap() {
   const [activeLocation, setActiveLocation] = useState<LocationId | null>(null);
@@ -47,6 +74,7 @@ export default function JourneyMap() {
     <div className="w-full h-screen relative bg-[#e0f7fa]">
       <Canvas shadows dpr={[1, 2]} camera={{ position: [40, 30, 50], fov: 25 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
+          <ResponsiveCamera />
           <Scene />
           <Islands />
           <Boat 

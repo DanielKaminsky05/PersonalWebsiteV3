@@ -3,13 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { MathUtils } from "three";
 
 export default function Scene() {
-  useFrame((state) => {
-    // Subtle camera parallax based on mouse
-    const t = state.pointer;
-    state.camera.position.x = MathUtils.lerp(state.camera.position.x, 50 + t.x * 2, 0.05);
-    state.camera.position.z = MathUtils.lerp(state.camera.position.z, 50 + t.y * 2, 0.05);
-    state.camera.lookAt(0, 0, 0);
-  });
+
 
   return (
     <>
