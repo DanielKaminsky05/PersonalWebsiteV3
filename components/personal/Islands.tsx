@@ -4,7 +4,18 @@ import { useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-export default function Islands() {
+
+interface IslandsProps {
+  positions: {
+    island1: [number, number, number];
+    island2: [number, number, number];
+    island3: [number, number, number];
+    island4: [number, number, number];
+  };
+  scale?: number;
+}
+
+export default function Islands({ positions, scale = 1 }: IslandsProps) {
   const { scene: island1 } = useGLTF("/models/Island1.glb");
   const { scene: island2 } = useGLTF("/models/Island2.glb");
   const { scene: island3 } = useGLTF("/models/Island3.glb");
@@ -26,28 +37,28 @@ export default function Islands() {
     <group>
       <primitive
         object={island1}
-        position={[0, 0, -20]} // Right
+        position={positions.island1}
         rotation={[0, -1.5 * Math.PI / 4, 0]}
-        scale={1}
+        scale={scale}
       />
       <primitive
         object={island2}
-        position={[5, 0, 25]} // Left
+        position={positions.island2}
         rotation={[0, Math.PI / 4, 0]}
-        scale={1}
+        scale={scale}
       />
       <primitive
         object={island3}
-        position={[-20, 0, 0]} // Top
+        position={positions.island3}
         rotation={[0, 2 * Math.PI / 4, 0]}
-        scale={1}
+        scale={scale}
       />
 
        <primitive
         object={island4}
-        position={[25, 0, 0]} // Bottom
+        position={positions.island4}
         rotation={[0, 1.8* Math.PI / 4, 0]}
-        scale={1}
+        scale={scale}
       />
     </group>
   );

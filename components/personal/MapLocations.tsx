@@ -6,9 +6,10 @@ interface MapLocationsProps {
   locations: MapLocation[];
   onLocationClick: (location: MapLocation) => void;
   activeLocation: LocationId | null;
+  scale?: number;
 }
 
-export default function MapLocations({ locations, onLocationClick, activeLocation }: MapLocationsProps) {
+export default function MapLocations({ locations, onLocationClick, activeLocation, scale = 1 }: MapLocationsProps) {
   return (
     <>
       {locations.map((loc) => (
@@ -17,13 +18,14 @@ export default function MapLocations({ locations, onLocationClick, activeLocatio
           location={loc}
           onClick={() => onLocationClick(loc)}
           isActive={activeLocation === loc.id}
+          baseScale={scale}
         />
       ))}
     </>
   );
 }
 
-function LocationMarker({ location, onClick, isActive }: { location: MapLocation, onClick: () => void, isActive: boolean }) {
+function LocationMarker({ location, onClick, isActive, baseScale }: { location: MapLocation, onClick: () => void, isActive: boolean, baseScale: number }) {
   const [hovered, setHovered] = useState(false);
   const color = isActive ? "#ef4444" : (hovered ? "#dc2626" : "#7f1d1d"); // Red ink colors
 
@@ -36,7 +38,7 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
     >
       {/* Invisible Hitbox */}
       <mesh>
-         <boxGeometry args={[5, 4, 5]} />
+         <boxGeometry args={[5 * baseScale, 4 * baseScale, 5 * baseScale]} />
          <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh>
 
@@ -44,7 +46,7 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
       <group 
         rotation={[0, Math.PI / 4, 0]} // Rotate to make it an X
         position={[0, 0.02, 0]} // Just above paper
-        scale={hovered || isActive ? 3.2 : 3}
+        scale={(hovered || isActive ? 3.2 : 3) * baseScale}
       >
         <mesh rotation={[0, 0, 0]} position={[0, 0, 0]}>
             <boxGeometry args={[0.8, 0.05, 0.15]} />

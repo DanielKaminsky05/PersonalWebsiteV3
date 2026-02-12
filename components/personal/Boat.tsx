@@ -12,9 +12,10 @@ interface BoatProps {
   activeLocationId: LocationId | null;
   locations: MapLocation[];
   onArrived: () => void;
+  scale?: number;
 }
 
-export default function Boat({ points, activeLocationId, locations, onArrived }: BoatProps) {
+export default function Boat({ points, activeLocationId, locations, onArrived, scale = 1.5 }: BoatProps) {
   const meshRef = useRef<THREE.Group>(null);
   const progress = useRef(0);
   const targetProgress = useRef<number | null>(null);
@@ -186,7 +187,7 @@ export default function Boat({ points, activeLocationId, locations, onArrived }:
             object={scene} 
             position={[0, -0.05, 0]}
             rotation={[0, 2* Math.PI, 0]} 
-            scale={1.5} 
+            scale={scale} 
         />
       </group>
     </Float>
