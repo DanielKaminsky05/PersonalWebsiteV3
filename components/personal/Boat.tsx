@@ -11,7 +11,7 @@ interface BoatProps {
 
 export default function Boat({ targetPosition }: BoatProps) {
   const meshRef = useRef<any>(null);
-  const currentPos = useMemo(() => new Vector3(40, 0, 40), []);
+  const currentPos = useMemo(() => new Vector3(15, 0, 0), []);
   const velocity = useMemo(() => new Vector3(0, 0, 0), []);
   const worldTarget = useMemo(() => new Vector3(...targetPosition), [targetPosition]);
   

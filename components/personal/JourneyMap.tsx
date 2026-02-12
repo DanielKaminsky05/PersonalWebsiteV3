@@ -27,7 +27,7 @@ export default function JourneyMap() {
 
   return (
     <div className="w-full h-screen relative bg-[#e0f7fa]">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [50, 50, 50], fov: 30 }}>
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [50, 35, 50], fov: 20 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
           <Scene />
           <Islands />
