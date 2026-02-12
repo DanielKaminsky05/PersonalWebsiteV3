@@ -51,7 +51,7 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
       {/* Label - Handwritten style font if possible, standard for now */}
       <Html position={[0, 1, 0]} center distanceFactor={10}>
         <div 
-          className={`px-3 py-1 text-sm font-bold transition-all duration-300 pointer-events-none whitespace-nowrap
+          className={`px-3 py-1 text-3xl font-bold transition-all duration-300 pointer-events-none whitespace-nowrap
             ${isActive ? "text-red-600 scale-125 font-serif" : (hovered ? "text-red-500 font-serif" : "text-gray-600/70 font-serif")}
           `}
           style={{ textShadow: '0 0 2px #f4e4bc' }} // Paper colored outline for readability
