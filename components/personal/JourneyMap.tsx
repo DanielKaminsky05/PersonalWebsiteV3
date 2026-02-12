@@ -39,13 +39,13 @@ const DESKTOP_LAYOUT = {
 };
 
 const MOBILE_LAYOUT = {
-  scale: 0.6, // Smaller scale for mobile
+  scale: 0.5, // Smaller scale for mobile
   islands: {
     // Tighter, more vertical stack
     island1: [0, 0, -10], 
     island2: [2, 0, 12], 
     island3: [-8, 0, 0], 
-    island4: [10, 0, 0], 
+    island4: [12, 0, 0], 
   },
   locations: [
     // Closer to center
@@ -132,7 +132,7 @@ export default function JourneyMap() {
   };
 
   return (
-    <div className="w-full h-[100dvh] relative bg-[#e0f7fa]">
+    <div className="fixed inset-0 w-full h-[100dvh] bg-[#e0f7fa] overflow-hidden">
       <Canvas shadows dpr={[1, 3]} camera={{ position: [50, 30, 50], fov: 25 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
           <ResponsiveCamera />
