@@ -8,6 +8,7 @@ export default function Islands() {
   const { scene: island1 } = useGLTF("/models/Island1.glb");
   const { scene: island2 } = useGLTF("/models/Island2.glb");
   const { scene: island3 } = useGLTF("/models/Island3.glb");
+  const { scene: island4 } = useGLTF("/models/Island4.glb");
 
   // Enable shadows for both islands
   useMemo(() => {
@@ -19,7 +20,7 @@ export default function Islands() {
         }
       });
     });
-  }, [island1, island2]);
+  }, [island1, island2, island3, island4]);
 
   return (
     <group>
@@ -38,6 +39,13 @@ export default function Islands() {
       <primitive
         object={island3}
         position={[0, 0.3, 0]} // Moved further away to prevent overlap
+        rotation={[0, Math.PI / 4, 0]}
+        scale={1}
+      />
+
+       <primitive
+        object={island4}
+        position={[-30, 0.3, 0]} // Moved further away to prevent overlap
         rotation={[0, Math.PI / 4, 0]}
         scale={1}
       />
