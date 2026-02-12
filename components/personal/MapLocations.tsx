@@ -30,14 +30,14 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
   return (
     <group 
       position={location.position}
-      onClick={(e) => { e.stopPropagation(); onClick(); }}
+      onPointerDown={(e) => { e.stopPropagation(); onClick(); }}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
       {/* Invisible Hitbox */}
       <mesh>
          <boxGeometry args={[5, 4, 5]} />
-         <meshBasicMaterial transparent opacity={0} />
+         <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh>
 
       {/* "X" Mark Geometry */}

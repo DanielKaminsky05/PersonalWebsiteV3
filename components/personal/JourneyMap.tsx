@@ -20,20 +20,6 @@ const locations: MapLocation[] = [
 export default function JourneyMap() {
   const [activeLocation, setActiveLocation] = useState<LocationId | null>(null);
   const [menuLocation, setMenuLocation] = useState<LocationId | null>(null);
-  const [isPortrait, setIsPortrait] = useState(false);
-
-  useEffect(() => {
-    const checkOrientation = () => {
-      setIsPortrait(window.innerWidth < window.innerHeight);
-    };
-    
-    // Check initially
-    checkOrientation();
-    
-    // Check on resize
-    window.addEventListener('resize', checkOrientation);
-    return () => window.removeEventListener('resize', checkOrientation);
-  }, []);
 
   const pathPoints: [number, number, number][] = [
     [15, 0, 20],   // Origins
@@ -60,21 +46,6 @@ export default function JourneyMap() {
 
   return (
     <div className="w-full h-screen relative bg-[#e0f7fa]">
-      {/* Mobile Portrait Overlay */}
-      {isPortrait && (
-        <div className="absolute inset-0 z-50 bg-[#f4e4bc] flex flex-col items-center justify-center p-8 text-center">
-            <div className="mb-6 opacity-80">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                    <path d="M12 18h.01"></path>
-                </svg>
-                <div className="mt-2 text-4xl animate-pulse">↻</div>
-            </div>
-            <h2 className="text-3xl font-serif font-bold text-[#5d4037] mb-4">Please Rotate Your Device</h2>
-            <p className="text-xl text-[#795548] font-serif">The explorer's map is best viewed in landscape mode.</p>
-        </div>
-      )}
-
       <Canvas shadows dpr={[1, 2]} camera={{ position: [50, 30, 50], fov: 25 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
           <Scene />
