@@ -132,7 +132,7 @@ export default function JourneyMap() {
   };
 
   return (
-    <div className="fixed inset-0 w-full h-[100dvh] bg-[#e0f7fa] overflow-hidden">
+    <div className="fixed inset-0 w-full h-[100dvh] bg-[#29b6f6] overflow-hidden">
       <Canvas shadows dpr={[1, 3]} camera={{ position: [50, 30, 50], fov: 25 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
           <ResponsiveCamera />

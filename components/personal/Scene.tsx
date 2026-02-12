@@ -1,12 +1,12 @@
 import { Environment, ContactShadows } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { MathUtils } from "three";
 
 export default function Scene() {
 
 
   return (
     <>
+      <color attach="background" args={["#29b6f6"]} />
+
       {/* Warm 'Sunlight' */}
       <ambientLight intensity={0.8} color="#fffcf0" />
       <directionalLight 
@@ -18,21 +18,18 @@ export default function Scene() {
       
       <Environment preset="city" />
 
-      {/* The Map Surface (Parchment) */}
+      {/* The Map Surface (Water) */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
-        <planeGeometry args={[100, 100]} />
+        <planeGeometry args={[300, 300]} />
         <meshStandardMaterial 
-            color="#f4e4bc" 
-            roughness={0.9} 
-            metalness={0.0}
+            color="#29b6f6" 
+            roughness={0.4} 
+            metalness={0.1}
         />
       </mesh>
 
       {/* Grid Lines (Latitude/Longitude feel) */}
-      <gridHelper 
-        args={[100, 50, "#d4c4a8", "#d4c4a8"]} 
-        position={[0, -0.09, 0]} 
-      />
+      
 
       <ContactShadows resolution={1024} scale={50} blur={2} opacity={0.4} far={10} color="#8d6e63" />
     </>
