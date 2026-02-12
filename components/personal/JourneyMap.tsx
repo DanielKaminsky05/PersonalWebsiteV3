@@ -1,4 +1,4 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useState, useEffect } from "react";
 import Scene from "./Scene";
 import Boat from "./Boat";
@@ -7,6 +7,7 @@ import { Html, Loader } from "@react-three/drei";
 import { MapLocation, LocationId } from "./types";
 import MapPath from "./MapPath";
 import Islands from "./Islands";
+import { Vector3 } from "three";
 
 const locations: MapLocation[] = [
   { id: "origins", label: "Origins", position: [15, 0, 20], content: <div>Where I started...</div> },
@@ -16,6 +17,27 @@ const locations: MapLocation[] = [
   { id: "hobbies", label: "Hobbies", position: [20, 0, 5], content: <div>What I do for fun...</div> },
 ];
 
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+
+  useEffect(() => {
+    const aspect = size.width / size.height;
+    const defaultPos = new Vector3(50, 30, 50);
+
+    if (aspect < 1) {
+      // Portrait: Move camera back significantly
+      camera.position.set(defaultPos.x * 1.5, defaultPos.y * 1.5, defaultPos.z * 1.5);
+    } else {
+      // Landscape: Default
+      camera.position.copy(defaultPos);
+    }
+    
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+  }, [size, camera]);
+
+  return null;
+}
 
 export default function JourneyMap() {
   const [activeLocation, setActiveLocation] = useState<LocationId | null>(null);
@@ -45,9 +67,10 @@ export default function JourneyMap() {
   };
 
   return (
-    <div className="w-full h-screen relative bg-[#e0f7fa]">
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [50, 30, 50], fov: 25 }}>
+    <div className="w-full h-[100dvh] relative bg-[#e0f7fa]">
+      <Canvas shadows dpr={[1, 3]} camera={{ position: [50, 30, 50], fov: 25 }}>
         <Suspense fallback={<Html>Loading...</Html>}>
+          <ResponsiveCamera />
           <Scene />
           <Islands />
           <Boat 
