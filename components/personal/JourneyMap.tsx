@@ -44,8 +44,8 @@ const MOBILE_LAYOUT = {
     // Tighter, more vertical stack
     island1: [0, 0, -10], 
     island2: [2, 0, 12], 
-    island3: [-8, 0, 0], 
-    island4: [12, 0, 0], 
+    island3: [-10, 0, -2], 
+    island4: [13, 0, 0], 
   },
   locations: [
     // Closer to center
