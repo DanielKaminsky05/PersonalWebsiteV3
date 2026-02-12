@@ -35,8 +35,8 @@ function LocationMarker({ location, onClick, isActive }: { location: MapLocation
       onPointerOut={() => setHovered(false)}
     >
       {/* Invisible Hitbox */}
-      <mesh visible={false}>
-         <boxGeometry args={[3, 2, 3]} />
+      <mesh>
+         <boxGeometry args={[5, 4, 5]} />
          <meshBasicMaterial transparent opacity={0} />
       </mesh>
 
