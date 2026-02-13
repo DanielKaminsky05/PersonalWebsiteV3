@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import ProfessionalLayout from "@/components/home/ProfessionalLayout";
 import PersonalLayout from "@/components/home/PersonalLayout";
+import BoatLoader from "@/components/home/BoatLoader";
 import { BlogPostMetadata } from "@/lib/blog";
 
 interface HomeWrapperProps {
@@ -57,7 +58,7 @@ export default function HomeWrapper({ posts }: HomeWrapperProps) {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[60] bg-black flex items-center justify-center"
           >
-            <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+            <BoatLoader />
           </motion.div>
         )}
       </AnimatePresence>

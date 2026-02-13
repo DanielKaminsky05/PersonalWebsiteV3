@@ -8,22 +8,16 @@ import { Html, Loader } from "@react-three/drei";
 import { MapLocation, LocationId } from "./types";
 import MapPath from "./MapPath";
 import Islands from "./Islands";
-import { Vector3 } from "three";
-import personalMapData from "@/data/personalMap.json";
 import LocationOverlay from "./LocationOverlay";
-import Origins from "./locations/Origins";
 import Status from "./locations/Status";
 import Interests from "./locations/CurrentInterests";
-import Philosophy from "./locations/Philosophy";
-import Hobbies from "./locations/Hobbies";
+import DoingRightNow from "./locations/DoingRightNow";
 
 // Map location IDs to their respective components
 const LOCATION_COMPONENTS: Record<string, React.ComponentType> = {
-  origins: Origins,
   status: Status,
   interests: Interests,
-  philosophy: Philosophy,
-  hobbies: Hobbies,
+  doingRightNow: DoingRightNow
 };
 
 // Layout constants
@@ -36,11 +30,9 @@ const DESKTOP_LAYOUT = {
     island4: [25, 0, 0],
   },
   locations: [
-    { id: "origins", label: "Origins", position: [15, 0, 20] },
-    { id: "status", label: "Status", position: [-10, 0, 20] },
-    { id: "interests", label: "Interests", position: [-4, 0, -3] },
-    { id: "philosophy", label: "Philosophy", position: [15, 0, -12] },
-    { id: "hobbies", label: "Hobbies", position: [20, 0, 5] },
+    { id: "status", label: "Status", position: [-12, 0, 8] },
+    { id: "interests", label: "Interests", position: [15, 0, -12] },
+    { id: "doingRightNow", label: "Now", position: [15, 0, 20] },
   ],
   pathPoints: [
     [15, 0, 20],   // Origins
@@ -66,11 +58,9 @@ const MOBILE_LAYOUT = {
   },
   locations: [
     // Closer to center
-    { id: "origins", label: "Origins", position: [8, 0, 10] },
-    { id: "status", label: "Status", position: [-5, 0, 10] },
-    { id: "interests", label: "Interests", position: [-2, 0, -2] },
-    { id: "philosophy", label: "Philosophy", position: [8, 0, -6] },
-    { id: "hobbies", label: "Hobbies", position: [10, 0, 2] },
+    { id: "doingRightNow", label: "Now", position: [8, 0, 10] },
+    { id: "status", label: "Status", position: [-6, 0, 3] },
+    { id: "interests", label: "Interests", position: [8, 0, -6] },
   ],
   pathPoints: [
     // Tighter curve
@@ -78,7 +68,7 @@ const MOBILE_LAYOUT = {
     [5, 0, 11],
     [0, 0, 8],    
     [-5, 0, 10],  
-    [-6, 0, 4],
+    [-6, 0, 3],
     [-2, 0, -2],   
     [-3, 0, -5],
     [8, 0, -6],  
@@ -140,8 +130,14 @@ export default function JourneyMap() {
   const currentScale = layout.scale;
 
   const handleLocationClick = (location: MapLocation) => {
-    setMenuLocation(null);
-    setActiveLocation(location.id);
+    // If clicking the same location where boat is already parked, just reopen the menu
+    if (activeLocation === location.id) {
+      setMenuLocation(location.id);
+    } else {
+      // Otherwise, close menu and navigate to new location
+      setMenuLocation(null);
+      setActiveLocation(location.id);
+    }
   };
 
   const handleBoatArrived = () => {
