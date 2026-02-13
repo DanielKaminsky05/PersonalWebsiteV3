@@ -165,6 +165,7 @@ export default function JourneyMap() {
             activeLocation={activeLocation} 
             onLocationClick={handleLocationClick} 
             scale={currentScale}
+            hideLabels={menuLocation !== null}
           />
           <MapPath points={currentPathPoints} />
         </Suspense>

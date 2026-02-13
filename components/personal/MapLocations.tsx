@@ -7,9 +7,10 @@ interface MapLocationsProps {
   onLocationClick: (location: MapLocation) => void;
   activeLocation: LocationId | null;
   scale?: number;
+  hideLabels?: boolean;
 }
 
-export default function MapLocations({ locations, onLocationClick, activeLocation, scale = 1 }: MapLocationsProps) {
+export default function MapLocations({ locations, onLocationClick, activeLocation, scale = 1, hideLabels = false }: MapLocationsProps) {
   return (
     <>
       {locations.map((loc) => (
@@ -19,13 +20,14 @@ export default function MapLocations({ locations, onLocationClick, activeLocatio
           onClick={() => onLocationClick(loc)}
           isActive={activeLocation === loc.id}
           baseScale={scale}
+          hideLabel={hideLabels}
         />
       ))}
     </>
   );
 }
 
-function LocationMarker({ location, onClick, isActive, baseScale }: { location: MapLocation, onClick: () => void, isActive: boolean, baseScale: number }) {
+function LocationMarker({ location, onClick, isActive, baseScale, hideLabel = false }: { location: MapLocation, onClick: () => void, isActive: boolean, baseScale: number, hideLabel?: boolean }) {
   const [hovered, setHovered] = useState(false);
   const color = isActive ? "#ef4444" : (hovered ? "#dc2626" : "#7f1d1d"); // Red ink colors
 
@@ -58,17 +60,19 @@ function LocationMarker({ location, onClick, isActive, baseScale }: { location: 
         </mesh>
       </group>
       
-      {/* Label - Handwritten style font if possible, standard for now */}
-      <Html position={[0, 1, 0]} center distanceFactor={10}>
-        <div 
-          className={`px-3 py-1 text-3xl font-bold transition-all duration-300 pointer-events-none whitespace-nowrap
-            ${isActive ? "text-red-600 scale-125 font-serif" : (hovered ? "text-red-500 font-serif" : "text-gray-600/70 font-serif")}
-          `}
-          style={{ textShadow: '0 0 2px #f4e4bc' }} // Paper colored outline for readability
-        >
-          {location.label}
-        </div>
-      </Html>
+      {/* Label - Only render if not hidden */}
+      {!hideLabel && (
+        <Html position={[0, 1, 0]} center distanceFactor={10}>
+          <div 
+            className={`px-3 py-1 text-3xl font-bold transition-all duration-300 pointer-events-none whitespace-nowrap
+              ${isActive ? "text-red-600 scale-125 font-serif" : (hovered ? "text-red-500 font-serif" : "text-gray-600/70 font-serif")}
+            `}
+            style={{ textShadow: '0 0 2px #f4e4bc' }} // Paper colored outline for readability
+          >
+            {location.label}
+          </div>
+        </Html>
+      )}
     </group>
   );
 }
