@@ -3,6 +3,12 @@ import { AnimatePresence, motion } from "motion/react";
 
 export default function Interests() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  
+  const hikingImages = [
+    '/hike/hike1.png',
+    '/hike/hike2.png',
+    '/hike/hike3.png'
+  ];
 
   return (
     <div className="w-full">
@@ -38,13 +44,17 @@ export default function Interests() {
                 <p className="text-gray-500 text-[10px] uppercase tracking-wider">I love nature:</p>
             </div>
             <div className="flex gap-2 overflow-x-auto">
-                 {[1, 2, 3].map((i) => (
+                 {hikingImages.map((img, i) => (
                     <button 
                         key={i} 
                         onClick={() => setSelectedImage(i)}
-                        className="flex-shrink-0 w-10 h-10 bg-white/5 rounded-md border border-white/10 flex items-center justify-center overflow-hidden hover:bg-white/10 hover:scale-105 transition-all group"
+                        className="flex-shrink-0 w-10 h-10 rounded-md border border-white/10 overflow-hidden hover:scale-105 transition-all hover:border-white/30"
                     >
-                         <span className="text-white/30 text-[8px] group-hover:text-white/50">IMG</span>
+                        <img 
+                            src={img} 
+                            alt={`Hiking ${i + 1}`}
+                            className="w-full h-full object-cover"
+                        />
                     </button>
                  ))}
             </div>
@@ -89,7 +99,7 @@ export default function Interests() {
 
       {/* Image Preview Modal */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedImage !== null && (
             <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -98,7 +108,7 @@ export default function Interests() {
                 onClick={() => setSelectedImage(null)}
             >
                 <div 
-                    className="bg-zinc-900 border border-white/10 rounded-2xl p-2 max-w-lg w-full aspect-video flex items-center justify-center relative shadow-2xl"
+                    className="bg-zinc-900 border border-white/10 rounded-2xl p-2 max-w-4xl w-full aspect-video flex items-center justify-center relative shadow-2xl"
                     onClick={(e) => e.stopPropagation()}
                 >
                     <button 
@@ -107,10 +117,11 @@ export default function Interests() {
                     >
                         ✕
                     </button>
-                    <div className="text-white/30 flex flex-col items-center gap-4">
-                         <div className="w-16 h-16 rounded-lg border-2 border-white/20"></div>
-                        <span>Placeholder Image {selectedImage} Preview</span>
-                    </div>
+                    <img 
+                        src={hikingImages[selectedImage]} 
+                        alt={`Hiking ${selectedImage + 1}`}
+                        className="w-full h-full object-contain rounded-lg"
+                    />
                 </div>
             </motion.div>
         )}
