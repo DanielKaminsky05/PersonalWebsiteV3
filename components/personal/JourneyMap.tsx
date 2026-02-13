@@ -1,5 +1,6 @@
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useState, useEffect } from "react";
+import { AnimatePresence } from "motion/react";
 import Scene from "./Scene";
 import Boat from "./Boat";
 import MapLocations from "./MapLocations";
@@ -8,6 +9,22 @@ import { MapLocation, LocationId } from "./types";
 import MapPath from "./MapPath";
 import Islands from "./Islands";
 import { Vector3 } from "three";
+import personalMapData from "@/data/personalMap.json";
+import LocationOverlay from "./LocationOverlay";
+import Origins from "./locations/Origins";
+import Status from "./locations/Status";
+import Interests from "./locations/CurrentInterests";
+import Philosophy from "./locations/Philosophy";
+import Hobbies from "./locations/Hobbies";
+
+// Map location IDs to their respective components
+const LOCATION_COMPONENTS: Record<string, React.ComponentType> = {
+  origins: Origins,
+  status: Status,
+  interests: Interests,
+  philosophy: Philosophy,
+  hobbies: Hobbies,
+};
 
 // Layout constants
 const DESKTOP_LAYOUT = {
@@ -19,11 +36,11 @@ const DESKTOP_LAYOUT = {
     island4: [25, 0, 0],
   },
   locations: [
-    { id: "origins", label: "Origins", position: [15, 0, 20], content: <div>Where I started...</div> },
-    { id: "status", label: "Status", position: [-10, 0, 20], content: <div>Cool stuff I built...</div> },
-    { id: "leadership", label: "Leadership", position: [-4, 0, -3], content: <div>Leading teams...</div> },
-    { id: "philosophy", label: "Philosophy", position: [15, 0, -12], content: <div>How I think...</div> },
-    { id: "hobbies", label: "Hobbies", position: [20, 0, 5], content: <div>What I do for fun...</div> },
+    { id: "origins", label: "Origins", position: [15, 0, 20] },
+    { id: "status", label: "Status", position: [-10, 0, 20] },
+    { id: "interests", label: "Interests", position: [-4, 0, -3] },
+    { id: "philosophy", label: "Philosophy", position: [15, 0, -12] },
+    { id: "hobbies", label: "Hobbies", position: [20, 0, 5] },
   ],
   pathPoints: [
     [15, 0, 20],   // Origins
@@ -49,11 +66,11 @@ const MOBILE_LAYOUT = {
   },
   locations: [
     // Closer to center
-    { id: "origins", label: "Origins", position: [8, 0, 10], content: <div>Where I started...</div> },
-    { id: "status", label: "Status", position: [-5, 0, 10], content: <div>Cool stuff I built...</div> },
-    { id: "leadership", label: "Leadership", position: [-2, 0, -2], content: <div>Leading teams...</div> },
-    { id: "philosophy", label: "Philosophy", position: [8, 0, -6], content: <div>How I think...</div> },
-    { id: "hobbies", label: "Hobbies", position: [10, 0, 2], content: <div>What I do for fun...</div> },
+    { id: "origins", label: "Origins", position: [8, 0, 10] },
+    { id: "status", label: "Status", position: [-5, 0, 10] },
+    { id: "interests", label: "Interests", position: [-2, 0, -2] },
+    { id: "philosophy", label: "Philosophy", position: [8, 0, -6] },
+    { id: "hobbies", label: "Hobbies", position: [10, 0, 2] },
   ],
   pathPoints: [
     // Tighter curve
@@ -115,7 +132,7 @@ export default function JourneyMap() {
 
   const currentLocations = layout.locations.map(l => ({
     ...l,
-    content: DESKTOP_LAYOUT.locations.find(d => d.id === l.id)?.content 
+    content: null // Deprecated, using component mapping
   })) as MapLocation[];
 
   const currentPathPoints = layout.pathPoints as [number, number, number][];
@@ -130,6 +147,8 @@ export default function JourneyMap() {
   const handleBoatArrived = () => {
     setMenuLocation(activeLocation);
   };
+
+  const ActiveComponent = menuLocation ? LOCATION_COMPONENTS[menuLocation] : null;
 
   return (
     <div className="fixed inset-0 w-full h-[100dvh] bg-[#29b6f6] overflow-hidden">
@@ -157,18 +176,13 @@ export default function JourneyMap() {
       <Loader />
       
       {/* UI Panel for Content */}
-      <div className={`absolute top-10 left-10 w-80 bg-white/90 backdrop-blur p-6 rounded-xl shadow-lg transition-transform duration-500 transform ${menuLocation ? "translate-x-0" : "-translate-x-[150%]"}`}>
-        <h2 className="text-2xl font-bold mb-4 capitalize">{menuLocation}</h2>
-        <div className="text-gray-700">
-            {currentLocations.find(l => l.id === menuLocation)?.content}
-        </div>
-        <button 
-            className="mt-4 text-sm text-gray-500 hover:text-black underline"
-            onClick={() => { setMenuLocation(null); setActiveLocation(null); }}
-        >
-            Close
-        </button>
-      </div>
+      <AnimatePresence>
+        {menuLocation && ActiveComponent && (
+          <LocationOverlay onClose={() => { setMenuLocation(null); setActiveLocation(null); }}>
+            <ActiveComponent />
+          </LocationOverlay>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

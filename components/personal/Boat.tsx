@@ -116,7 +116,7 @@ export default function Boat({ points, activeLocationId, locations, onArrived, s
     if (!meshRef.current) return;
 
     // Movement Logic
-    const SPEED = 0.05; // Base speed
+    const SPEED = 0.075; // Base speed
     
     if (targetProgress.current !== null) {
         // Move towards target
