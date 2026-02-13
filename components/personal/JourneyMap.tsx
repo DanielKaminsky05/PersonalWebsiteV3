@@ -20,7 +20,7 @@ const DESKTOP_LAYOUT = {
   },
   locations: [
     { id: "origins", label: "Origins", position: [15, 0, 20], content: <div>Where I started...</div> },
-    { id: "projects", label: "Projects", position: [-10, 0, 20], content: <div>Cool stuff I built...</div> },
+    { id: "status", label: "Status", position: [-10, 0, 20], content: <div>Cool stuff I built...</div> },
     { id: "leadership", label: "Leadership", position: [-4, 0, -3], content: <div>Leading teams...</div> },
     { id: "philosophy", label: "Philosophy", position: [15, 0, -12], content: <div>How I think...</div> },
     { id: "hobbies", label: "Hobbies", position: [20, 0, 5], content: <div>What I do for fun...</div> },
@@ -50,7 +50,7 @@ const MOBILE_LAYOUT = {
   locations: [
     // Closer to center
     { id: "origins", label: "Origins", position: [8, 0, 10], content: <div>Where I started...</div> },
-    { id: "projects", label: "Projects", position: [-5, 0, 10], content: <div>Cool stuff I built...</div> },
+    { id: "status", label: "Status", position: [-5, 0, 10], content: <div>Cool stuff I built...</div> },
     { id: "leadership", label: "Leadership", position: [-2, 0, -2], content: <div>Leading teams...</div> },
     { id: "philosophy", label: "Philosophy", position: [8, 0, -6], content: <div>How I think...</div> },
     { id: "hobbies", label: "Hobbies", position: [10, 0, 2], content: <div>What I do for fun...</div> },

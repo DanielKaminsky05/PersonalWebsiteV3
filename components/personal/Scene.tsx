@@ -29,7 +29,10 @@ export default function Scene() {
       </mesh>
 
       {/* Grid Lines (Latitude/Longitude feel) */}
-      
+      <gridHelper 
+        args={[300, 150, "#81d4fa", "#81d4fa"]} 
+        position={[0, -0.09, 0]} 
+      />
 
       <ContactShadows resolution={1024} scale={50} blur={2} opacity={0.4} far={10} color="#8d6e63" />
     </>

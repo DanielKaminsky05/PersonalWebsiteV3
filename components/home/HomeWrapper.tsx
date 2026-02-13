@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Switch } from "@/components/ui/switch";
+import { ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import ProfessionalLayout from "@/components/home/ProfessionalLayout";
 import PersonalLayout from "@/components/home/PersonalLayout";
@@ -47,18 +47,6 @@ export default function HomeWrapper({ posts }: HomeWrapperProps) {
 
   return (
     <div className="relative min-h-screen">
-      {/* Toggle Switch - Fixed Position */}
-      <div className="fixed bottom-10 right-10 z-50 flex flex-col items-center gap-3">
-        <Switch 
-          checked={isPersonalMode} 
-          onCheckedChange={handleModeToggle}
-          className="scale-[1.5] data-[state=checked]:bg-blue-500 shadow-xl border-2 border-white/20"
-        />
-        <span className="text-sm font-medium text-white/90 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 shadow-lg">
-          Toggle Mode
-        </span>
-      </div>
-
       {/* Loading Overlay */}
       <AnimatePresence>
         {isLoading && (
@@ -77,9 +65,24 @@ export default function HomeWrapper({ posts }: HomeWrapperProps) {
       {/* Content */}
       <div className={isPersonalMode ? "bg-white min-h-screen" : "bg-transparent min-h-screen"}>
         {isPersonalMode ? (
-          <PersonalLayout />
+          <>
+            <PersonalLayout />
+            {/* Toggle Button - Fixed Position (Only for Personal Mode) */}
+            <div className="fixed bottom-6 right-6 z-50">
+              <button
+                onClick={() => handleModeToggle(false)}
+                className="flex items-center gap-2 px-6 py-3 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg text-white font-medium hover:bg-black/90 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 group"
+              >
+                <span>Go back home</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </>
         ) : (
-          <ProfessionalLayout posts={posts} />
+          <ProfessionalLayout 
+            posts={posts} 
+            onToggleMode={() => handleModeToggle(true)}
+          />
         )}
       </div>
     </div>

@@ -2,10 +2,14 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "motion/react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, ArrowRight } from "lucide-react";
 import aboutMeData from "@/data/aboutMe.json";
 
-export default function AboutMe() {
+interface AboutMeProps {
+  onToggleMode: () => void;
+}
+
+export default function AboutMe({ onToggleMode }: AboutMeProps) {
   // Use a shorter interval for faster pacing: 5 seconds per slide
   const INTERVAL_TIME = 5000;
   
@@ -171,6 +175,28 @@ export default function AboutMe() {
               <Play size={20} className="fill-current ml-0.5" />
             )}
           </button>
+        </div>
+
+        {/* Adventure Toggle Button */}
+        <div className="mt-16">
+          <motion.button
+            onClick={onToggleMode}
+            animate={{ 
+              y: [0, -2, 2, -2, 0],
+            }}
+            transition={{ 
+              duration: 3,
+              repeat: Infinity,
+              repeatDelay: 2,
+              ease: "easeInOut"
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-8 py-4 bg-blue-500/80 backdrop-blur-sm rounded-xl text-white font-semibold text-lg hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 group"
+          >
+            <span>Go on a Adventure to learn more</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </motion.button>
         </div>
       </div>
     </section>

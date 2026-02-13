@@ -1,4 +1,4 @@
-export type LocationId = "origins" | "projects" | "leadership" | "philosophy" | "hobbies";
+export type LocationId = "origins" | "status" | "leadership" | "philosophy" | "hobbies";
 
 export interface MapLocation {
   id: LocationId;

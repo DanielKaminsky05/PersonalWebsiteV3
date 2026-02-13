@@ -12,9 +12,10 @@ import { BlogPostMetadata } from "@/lib/blog";
 
 interface ProfessionalLayoutProps {
   posts: BlogPostMetadata[];
+  onToggleMode: () => void;
 }
 
-export default function ProfessionalLayout({ posts }: ProfessionalLayoutProps) {
+export default function ProfessionalLayout({ posts, onToggleMode }: ProfessionalLayoutProps) {
   return (
     <>
       <PixelSnow 
@@ -33,7 +34,7 @@ export default function ProfessionalLayout({ posts }: ProfessionalLayoutProps) {
       />
       <main>
         <Hero />
-        <AboutMe />
+        <AboutMe onToggleMode={onToggleMode} />
         <WorkExperience />
         <Projects />
         <TechStack />
