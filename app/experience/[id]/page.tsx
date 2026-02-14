@@ -87,10 +87,10 @@ export default async function ExperiencePage({
                   blockquote: (props) => <blockquote className="border-l-4 border-white/20 pl-4 italic text-gray-400 my-6" {...props} />,
                   hr: (props) => <hr className="border-white/10 my-8" {...props} />,
                   img: (props) => (
-                    <figure className="my-8">
+                    <figure className="my-8 mx-auto">
                       <img 
                         {...props} 
-                        className="rounded-xl border border-white/10 w-full h-auto" 
+                        className="rounded-xl border border-white/10 max-h-[500px] mx-auto" 
                         alt={props.alt || ""} 
                       />
                       {props.alt && (

@@ -2,9 +2,7 @@
 
 A modern, interactive portfolio website featuring a unique dual-mode experience: a professional showcase and an immersive 3D journey map.
 
-🔗 **[Live Demo](https://your-domain.com)** | 📧 **[Contact](mailto:your-email@example.com)**
-
-## ✨ Features
+## Features
 
 ### 🎭 Dual-Mode Experience
 - **Professional Mode**: Traditional portfolio layout with projects, experience, and technical skills
@@ -176,17 +174,5 @@ npm run lint
 npx tsc --noEmit
 ```
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contact
-
-Daniel Kaminsky
-- **GitHub**: [@DanielKaminsky05](https://github.com/DanielKaminsky05)
-- **LinkedIn**: [danielkaminsky-](https://www.linkedin.com/in/danielkaminsky-/)
-- **Email**: your-email@example.com
-
----
-
-Built with ❤️ using Next.js and Three.js
