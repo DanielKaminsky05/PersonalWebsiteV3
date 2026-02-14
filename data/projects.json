@@ -42,7 +42,7 @@
       "RiskGuard overlays directly onto brokerage interfaces, interacting with the DOM to monitor trading activity. It identifies psychological pitfalls like Revenge Trading and Overtrading, using a Flask/Snowflake backend for analysis and Gemini to provide AI-driven coaching. The system tracks 'Capital Preserved' to quantify the value of disciplined trading."
     ],
     "author": "Daniel Kaminsky, David Vera, Anthony Stefanuto",
-    "media": "/projects/riskguard.jpg",
+    "media": "/projects/riskguard.webp",
     "tags": [
       "React",
       "Flask",
@@ -60,7 +60,7 @@
       "The mockup was created as part of the RBC Design Thinking Program term project. Design decisions were informed by user personas, educator concerns, and school board priorities around safe AI adoption."
     ],
     "author": "Daniel Kaminsky, Cynthia Li, Kiyana Salmi, Eric Wehlend",
-    "media": "/projects/tutorial.png",
+    "media": "/projects/tutorial.webp",
     "tags": [
       "Figma",
       "Design Thinking"
@@ -76,7 +76,7 @@
       "Features a custom Dataset abstraction for loading CSV data and benchmarking models consistently. Includes a Qt-based GUI, command-line demos, and a full unit testing suite using GoogleTest."
     ],
     "author": "Daniel Kaminsky, Thomson Lam, Henrique Leite",
-    "media": "/projects/tree_machine_learning_library.png",
+    "media": "/projects/tree_machine_learning_library.webp",
     "tags": [
       "C++",
       "OOP",
@@ -94,7 +94,7 @@
       "Explicit domain modeling for orders, fills, trades, and execution results. Designed with clear separation of concerns and thoroughly tested with unit and integration tests."
     ],
     "author": "Daniel Kaminsky",
-    "media": "/projects/orderbook.png",
+    "media": "/projects/orderbook.webp",
     "tags": [
       "C++",
       "GoogleTest",

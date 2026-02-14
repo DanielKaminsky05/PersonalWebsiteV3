@@ -2,7 +2,7 @@
   {
     "id": "1",
     "company": "Entree Capital",
-    "logo": "/logos/entree.png",
+    "logo": "/logos/entree.webp",
     "color": "#fbbf24",
     "position": "Software Engineer",
     "dates": "Jun 2025 - Aug 2025",
@@ -16,7 +16,7 @@
   {
     "id": "2",
     "company": "Western Developer Society",
-    "logo": "/logos/wds.png",
+    "logo": "/logos/wds.webp",
     "color": "#f87171",
     "position": "Project Manager",
     "dates": "Sept 2025 - Present",
@@ -29,7 +29,7 @@
   {
     "id": "3",
     "company": "RBC",
-    "logo": "/logos/rbc.png",
+    "logo": "/logos/rbc.webp",
     "color": "#60a5fa",
     "position": "Design Thinking Fellow",
     "dates": "Sept 2025 - Nov 2025",

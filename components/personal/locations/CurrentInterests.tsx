@@ -5,9 +5,9 @@ export default function Interests() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   
   const hikingImages = [
-    '/hike/hike1.png',
-    '/hike/hike2.png',
-    '/hike/hike3.png'
+    '/hike/hike1.webp',
+    '/hike/hike2.webp',
+    '/hike/hike3.webp'
   ];
 
   return (

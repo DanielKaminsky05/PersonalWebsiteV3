@@ -8,28 +8,28 @@
             "role": "Developer",
             "organization": "Western Cyber Society",
             "years": "2024-2025",
-            "logo": "/logos/wcs.png",
+            "logo": "/logos/wcs.webp",
             "description": "Worked in a team of six to design and build SecureFrame, a security-focused web application. Presented the project at the Toronto Tech Expo, earning first place in Cybersecurity."
           },
           {
             "role": "Developer",
             "organization": "Western Developer Society",
             "years": "2024-2025",
-            "logo": "/logos/wds.png",
+            "logo": "/logos/wds.webp",
             "description": "Built a website for local London city councillor David Ferreira, collaborating with designers and developers in a team environment."    
           },
           {
             "role": "Developer",
             "organization": "Tech for Social Impact",
             "years": "2025-2026",
-            "logo": "/logos/tsi.png",
+            "logo": "/logos/tsi.webp",
             "description": "Worked with Plan International, a global non-profit operating in 75+ countries and reaching millions of children annually, to design a SQL-backed system that streamlined and accelerated internal grant request processing."
           },
           {
             "role": "Developer",
             "organization": "Western AI",
             "years": "2025-2026",
-            "logo": "/logos/wai.png",
+            "logo": "/logos/wai.webp",
             "description": "Developed neural-apnea-triage, a machine learning model that detects sleep apnea from ECG (electrocardiogram) data. Achieved ~90% classification accuracy and contributed to a research paper detailing data preprocessing, feature engineering, and model architecture."
 
           }
@@ -42,7 +42,7 @@
             "role": "Academic Director",
             "organization": "Computer Science Undergraduate Society",
             "years": "2024–2025",
-            "logo": "/logos/csus.png",
+            "logo": "/logos/csus.webp",
             "description": "Organized academic workshops, exam review sessions, and mentorship programs to support CS students in their coursework and career development."
           },
           {

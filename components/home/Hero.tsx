@@ -66,7 +66,7 @@ export default function Hero() {
       <div className="w-full md:flex-1 relative flex justify-center items-center">
         <div className="relative w-48 h-48 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl">
           <Image
-            src="/Headshot.png"
+            src="/Headshot.webp"
             alt="Daniel - CS @ Western"
             fill
             className="object-cover"
