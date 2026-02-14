@@ -5,7 +5,6 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { query, variables } = body;
-    console.log("API Proxy: Forwarding to LeetCode", { variables });
 
     const response = await fetch('https://leetcode.com/graphql', {
       method: 'POST',
@@ -17,7 +16,6 @@ export async function POST(request: Request) {
       body: JSON.stringify({ query, variables }),
     });
 
-    console.log("API Proxy: LeetCode response status", response.status);
     const data = await response.json();
     
     // Log error if LeetCode returns errors structure
