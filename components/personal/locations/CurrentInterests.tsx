@@ -27,12 +27,10 @@ export default function Interests() {
             <div className="flex items-center gap-4 overflow-x-auto">
                  <div className="flex items-center gap-2">
                     <span className="text-white font-light text-sm">Meta</span>
-                    <span className="text-green-400 text-xs font-medium">+1.2%</span>
                  </div>
                  <div className="w-px h-4 bg-white/10"></div>
                  <div className="flex items-center gap-2">
                     <span className="text-white font-light text-sm">AAPL</span>
-                    <span className="text-green-400 text-xs font-medium">+0.8%</span>
                  </div>
             </div>
         </div>
@@ -64,7 +62,7 @@ export default function Interests() {
         <div className="flex items-center justify-between py-2 border-b border-white/5">
              <h3 className="text-gray-400 text-xs font-medium uppercase tracking-wider w-24 shrink-0">Gym</h3>
              <p className="text-white font-light text-sm text-opacity-80">
-                So close to 2 plates on bench
+                 Training to hit 2 plates on Bench
              </p>
         </div>
 
@@ -89,12 +87,11 @@ export default function Interests() {
 
          {/* Tanks Row */}
          <div className="flex items-center justify-between py-2">
-             <h3 className="text-gray-400 text-xs font-medium uppercase tracking-wider w-24 shrink-0">Tanks</h3>
+             <h3 className="text-gray-400 text-xs font-medium uppercase tracking-wider w-24 shrink-0">Reading</h3>
              <p className="text-white font-light text-sm text-opacity-80">
-                Bob Semple Tank, enough said.
+                LOTR & GOT
              </p>
          </div>
-
       </div>
 
       {/* Image Preview Modal */}
