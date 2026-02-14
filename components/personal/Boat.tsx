@@ -21,18 +21,6 @@ export default function Boat({ points, activeLocationId, locations, onArrived, s
   const targetProgress = useRef<number | null>(null);
   const lastSignaledTarget = useRef<number | null>(null);
 
-  // ... (curve and map setup code remains same, omitted here for brevity if replace handles contexts correctly but here I need to be careful)
-  // Wait, I can't restart the function body easily with replace_file_content unless I replace the whole function start.
-  // I will target the props interface and function signature first.
-  
-  // NOTE regarding the tool usage: I must target contiguous blocks. 
-  // I will do this in two chunks if needed, or valid range.
-  // Let's do the logic injection in useFrame separately from Props update? No, Props update changes signature.
-  // I'll update the Interface and Main Function Signature in one go.
-  
-  // Actually, I can replace from `interface BoatProps` down to `const meshRef` start.
-
-  
   // Create the curve from points
   const curve = useMemo(() => {
     return new THREE.CatmullRomCurve3(
@@ -103,9 +91,6 @@ export default function Boat({ points, activeLocationId, locations, onArrived, s
             targetProgress.current = absoluteTarget;
         }
     }
-    // If null, we just stay where we are (target remains what it was or null? If null, stop?)
-    // User said "stops until you click". So if no target, stop.
-    // If we click off, do we stop immediately? Yes.
     else {
         targetProgress.current = null;
     }
@@ -197,6 +182,4 @@ export default function Boat({ points, activeLocationId, locations, onArrived, s
 // Preload the model
 useGLTF.preload("/models/boat.glb");
 
-// Need THREE for matrix operations inside useFrame
-// import * as THREE from 'three'; // Removed duplicate
 

@@ -92,7 +92,7 @@ export function calculateStats(): ChartDataPoint[] {
                 yearLabel: `${yearNum}W`, // 1W, 2W
                 userCumulativeAvg: parseFloat((totalUserPoints / totalUnits).toFixed(1)),
                 classCumulativeAvg: parseFloat((totalClassPoints / totalUnits).toFixed(1)),
-                courses: winterCourses, // Show just winter courses in details? Or all year? Usually just the new ones for that point's context.
+                courses: winterCourses,
                 term: 'Winter'
             });
         }

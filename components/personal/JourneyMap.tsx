@@ -83,11 +83,7 @@ function ResponsiveCamera() {
     const aspect = size.width / size.height;
     
     if (aspect < 1) {
-       // Portrait: We are using MOBILE_LAYOUT now.
-       // We need to scale the distance based on how narrow the screen is to keep the horizontal width in view.
-       // Base distance 60 is good for roughly square aspect. 
-       // For narrower screens (iPhone), we need to maintain horizontal FOV.
-       // Distance ~= Base / aspect
+       // Portrait mode: adjust camera distance based on aspect ratio to maintain horizontal FOV
        const base = 40; 
        const adjusted = base / aspect; 
        

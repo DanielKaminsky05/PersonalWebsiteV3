@@ -44,7 +44,7 @@ export default function Status() {
           </div>
         </div>
 
-        {/* Coffee Box - Make it span 1 on mobile too for compactness or 2 if text is long? Black is short. */}
+        {/* Coffee Box */}
         <div className="col-span-1 md:col-span-1 bg-white/5 border border-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-colors">
             <div className="h-full flex flex-col justify-between gap-2">
                 <h3 className="text-gray-400 text-xs font-medium uppercase tracking-wider">Coffee</h3>
