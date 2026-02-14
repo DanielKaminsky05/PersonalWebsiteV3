@@ -79,16 +79,18 @@ export default function ExperienceCard({ experience }: { experience: Experience 
             ))}
           </ul>
 
-          {/* Deep Dive Button */}
-          <div className="pt-4">
-            <Link 
-              href={`/experience/${experience.id}`}
-              className="inline-flex items-center gap-2 px-5 py-1.5 bg-white text-black font-bold text-sm rounded-full hover:scale-105 transition-transform shadow-lg shadow-white/10"
-            >
-              Deep Dive
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
+          {/* Deep Dive Button - Hidden for Entree Capital */}
+          {experience.id !== "1" && (
+            <div className="pt-4">
+              <Link 
+                href={`/experience/${experience.id}`}
+                className="inline-flex items-center gap-2 px-5 py-1.5 bg-white text-black font-bold text-sm rounded-full hover:scale-105 transition-transform shadow-lg shadow-white/10"
+              >
+                Deep Dive
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
