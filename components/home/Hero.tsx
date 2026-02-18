@@ -15,14 +15,15 @@ export default function Hero({ onToggleMode }: { onToggleMode?: () => void }) {
         <p className="text-xl md:text-2xl text-gray-300 font-medium tracking-wide">
           CS @ Western
         </p>
-        <div className="text-lg font-light text-gray-200">
-          I am a <span className="font-medium text-white">Full Stack</span> software engineer based in <span className="font-medium text-white">Toronto</span> & London ON<br/>
+        <div className="text-lg font-light text-gray-200 text-pretty md:text-balance">
+          Im a <span className="font-medium text-white">Full Stack</span> software engineer<br className="inline md:hidden" /> based in <span className="font-medium text-white">Toronto</span> & London ON
+          <br className="block my-1 content-['']" />
           <span className="font-medium text-white">Graduating</span> Summer 2027
         </div>
         
         
         <div className="flex flex-col gap-6 pb-10">
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
+          <div className="flex flex-row items-center justify-center md:justify-start gap-4">
             <button
               onClick={onToggleMode}
               className="inline-flex items-center justify-center p-3 h-[46px] text-white transition-all duration-300 bg-blue-500/80 border border-blue-400/30 rounded-md hover:bg-blue-500 hover:scale-105 hover:border-blue-400 backdrop-blur-sm group shadow-lg shadow-blue-500/20 cursor-pointer overflow-hidden"
