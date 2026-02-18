@@ -50,7 +50,7 @@ export default function Hero({ onToggleMode }: { onToggleMode?: () => void }) {
                 href="https://github.com/DanielKaminsky05"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 text-gray-300 transition-all duration-200 border border-white/10 rounded-md hover:bg-white/10 hover:text-white hover:scale-110 hover:border-white/30 backdrop-blur-sm"
+                className="p-3 text-gray-300 transition-all duration-200 rounded-md hover:bg-white/10 hover:text-white hover:scale-110 hover:border-white/30 backdrop-blur-sm"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -59,7 +59,7 @@ export default function Hero({ onToggleMode }: { onToggleMode?: () => void }) {
                 href="https://www.linkedin.com/in/danielkaminsky-/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 text-gray-300 transition-all duration-200 border border-white/10 rounded-md hover:bg-white/10 hover:text-white hover:scale-110 hover:border-white/30 backdrop-blur-sm"
+                className="p-3 text-gray-300 transition-all duration-200 rounded-md hover:bg-white/10 hover:text-white hover:scale-110 hover:border-white/30 backdrop-blur-sm"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
