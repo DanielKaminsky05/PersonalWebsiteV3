@@ -32,7 +32,7 @@ export default function Status() {
         <div className="col-span-1 md:col-span-1 bg-[#5d4037]/10 border border-[#5d4037]/20 p-4 rounded-xl hover:bg-[#5d4037]/20 transition-colors">
           <div className="h-full flex flex-col justify-between gap-2">
             <h3 className="text-[#5d4037] text-xs font-bold uppercase tracking-wider font-serif">Countries Visited</h3>
-            <span className="text-2xl md:text-3xl text-[#3e2723] font-serif font-bold">15</span>
+            <span className="text-2xl md:text-3xl text-[#3e2723] font-serif font-bold">18</span>
           </div>
         </div>
 
