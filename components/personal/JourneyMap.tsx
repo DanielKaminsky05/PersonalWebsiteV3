@@ -11,6 +11,7 @@ import Islands from "./Islands";
 import LocationOverlay from "./LocationOverlay";
 import Status from "./locations/Status";
 import Interests from "./locations/CurrentInterests";
+import IntroOverlay from "./IntroOverlay";
 import DoingRightNow from "./locations/DoingRightNow";
 
 // Map location IDs to their respective components
@@ -103,6 +104,7 @@ function ResponsiveCamera() {
 export default function JourneyMap() {
   const [activeLocation, setActiveLocation] = useState<LocationId | null>(null);
   const [menuLocation, setMenuLocation] = useState<LocationId | null>(null);
+  const [showIntro, setShowIntro] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -174,6 +176,13 @@ export default function JourneyMap() {
           <LocationOverlay onClose={() => { setMenuLocation(null); setActiveLocation(null); }}>
             <ActiveComponent />
           </LocationOverlay>
+        )}
+      </AnimatePresence>
+
+      {/* Intro Overlay - Pirate Theme */}
+      <AnimatePresence>
+        {showIntro && (
+           <IntroOverlay onClose={() => setShowIntro(false)} />
         )}
       </AnimatePresence>
     </div>

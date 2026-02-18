@@ -33,8 +33,8 @@ export default function ProfessionalLayout({ posts, onToggleMode }: Professional
           variant="snowflake"
       />
       <main>
-        <Hero />
-        <AboutMe onToggleMode={onToggleMode} />
+        <Hero onToggleMode={onToggleMode} />
+
         <WorkExperience />
         <Projects />
         <TechStack />
