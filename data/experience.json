@@ -8,9 +8,9 @@
     "dates": "Jun 2025 - Aug 2025",
     "shortDescription": "Built internal tools to help the investment team evaluate and compare startup founders.",
     "details": [
-      "Built a central dashboard using Next.js, Node.js, and Snowflake, reducing the time for partners to evaluate founders by 60% and streamlining the investment decision-making process.",
-      "Optimized tRPC procedures and SQL database queries to reduce API response times by 30%, improving data retrieval efficiency and enhancing overall application performance.",
-      "Collaborated with stakeholders and senior engineers in an Agile environment, contributing to sprint planning, code reviews, and feature prioritization"
+      "Built a central dashboard using <strong>Next.js, Node.js, and Snowflake</strong>, reducing the time for partners to evaluate founders by <strong>60%</strong> and streamlining the investment decision-making process.",
+      "Optimized <strong>tRPC procedures and SQL database queries</strong> to reduce API response times by <strong>30%</strong>, improving data retrieval efficiency and enhancing overall application performance.",
+      "Collaborated with stakeholders and senior engineers in an <strong>Agile environment</strong>, contributing to sprint planning, code reviews, and feature prioritization"
     ]
   },
   {
@@ -22,8 +22,8 @@
     "dates": "Sept 2025 - Present",
     "shortDescription": "Led a team of developers to deliver a real product for an external client.",
     "details": [
-      "Leading an 8-person engineering team building an educational platform for TalkMaze, drafting functional and non-functional requirements, aligning scope with clients, and guiding technical decisions",
-      "Architected the backend data layer (relational schema, auth, storage, API integrations), spearheaded the Next.js frontend, and managed Agile workflows through Linear and weekly scrums"
+      "Leading an <strong>8-person engineering team</strong> building an educational platform for <strong>TalkMaze</strong>, drafting functional and non-functional requirements, aligning scope with clients, and guiding technical decisions",
+      "Architected the <strong>backend data layer</strong> (relational schema, auth, storage, API integrations), spearheaded the <strong>Next.js frontend</strong>, and managed <strong>Agile workflows</strong> through Linear and weekly scrums"
     ]
   },
   {
@@ -35,9 +35,9 @@
     "dates": "Sept 2025 - Nov 2025",
     "shortDescription": "Selected for a competitive fellowship focused on applying AI to real-world problems.",
     "details": [
-      "Selected as 1 of 32 students from 350+ applicants and awarded a $3,500 stipend",
-      "Conducted detailed user research by interviewing 10+ education stakeholders to understand challenges in responsible classroom AI use",
-      "Translated research insights into a high-fidelity Figma prototype using design-thinking methods and pitched the final solution to 30+ RBC and Western executives during the cohort showcase"
+      "Selected as <strong>1 of 32 students</strong> from 350+ applicants and awarded a <strong>$3,500 stipend</strong>",
+      "Conducted detailed user research by interviewing <strong>10+ education stakeholders</strong> to understand challenges in responsible classroom AI use",
+      "Translated research insights into a <strong>high-fidelity Figma prototype</strong> using design-thinking methods and pitched the final solution to <strong>30+ RBC and Western executives</strong> during the cohort showcase"
     ]
   }
 ]
