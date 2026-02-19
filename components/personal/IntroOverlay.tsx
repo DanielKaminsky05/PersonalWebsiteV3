@@ -64,7 +64,7 @@ export default function IntroOverlay({ onClose }: IntroOverlayProps) {
           </motion.button>
           
           <div className="absolute bottom-4 opacity-30 text-xs uppercase tracking-widest font-bold">
-            Captain Daniel's Log
+            Captain's Log
           </div>
         </div>
       </motion.div>
