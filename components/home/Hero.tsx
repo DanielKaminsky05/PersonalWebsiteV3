@@ -18,7 +18,7 @@ export default function Hero({ onToggleMode }: { onToggleMode?: () => void }) {
         <div className="text-lg font-light text-gray-200 text-pretty md:text-balance">
           Im a <span className="font-medium text-white">Full Stack</span> software engineer<br className="inline md:hidden" /> based in <span className="font-medium text-white">Toronto</span> & London ON
           <br className="block my-1 content-['']" />
-          <span className="font-medium text-white">Graduating</span> Summer 2027
+          /*<span className="font-medium text-white">Graduating</span> Summer 2027 */
         </div>
         
         
