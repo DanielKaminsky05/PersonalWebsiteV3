@@ -30,7 +30,7 @@
             "organization": "Western AI",
             "years": "2025-2026",
             "logo": "/logos/wai.webp",
-            "description": "Developed neural-apnea-triage, a machine learning model that detects sleep apnea from ECG (electrocardiogram) data. Achieved ~90% classification accuracy and contributed to a research paper detailing data preprocessing, feature engineering, and model architecture."
+            "description": "Developed neural-apnea-triage, a machine learning model that detects sleep apnea from ECG (electrocardiogram) data. Achieved 89.2% classification accuracy and contributed to a research paper detailing data preprocessing, feature engineering, and model architecture."
 
           }
         ]

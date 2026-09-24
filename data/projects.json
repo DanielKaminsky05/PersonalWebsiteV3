@@ -1,17 +1,35 @@
 [
   {
+    "id": "7",
+    "title": "Neural Apnea Triage",
+    "description": [
+      "Developed a hybrid CNN–Transformer for ECG-based sleep apnea detection, pairing convolutional layers that capture local waveform morphology with a Transformer that models longer-range temporal dependencies across the signal. The model reached 89.2% accuracy and 0.956 AUROC on the PhysioNet Apnea-ECG benchmark, giving clinics a way to triage and prioritize higher-risk patients for sleep studies.",
+      "Designed a 6-stage ECG preprocessing pipeline that turns raw overnight recordings into clean model inputs, including signal filtering, Hamilton QRS detection to locate heartbeats, and physiological feature extraction such as heart-rate variability.",
+      "Co-authored the accompanying research paper and presented the work at CUCAI, a national undergraduate AI conference with 350+ delegates from universities across Canada."
+    ],
+    "author": "Daniel Kaminsky, Oliver Olejar, John MacPhie, Annie Liu, Sneha Shah",
+    "media": "",
+    "tags": [
+      "Python",
+      "CNN-Transformer",
+      "ECG"
+    ],
+    "github": "https://github.com/Western-Artificial-Intelligence/ecg-classifier-vrllm",
+    "paper": "https://drive.google.com/file/d/1ZAUd8_7I-Hdbv04KZFagDTsCDy2J3-7o/view"
+  },
+  {
     "id": "1",
     "title": "Secureframe",
     "description": [
       "1st Place in Cybersecurity at the Toronto Tech Expo.",
-      "SecureFrame is an AI-powered video privacy system that uses YOLOv8 object detection and AES encryption to selectively secure sensitive entities in video footage. Objects are detected and tracked across frames, enabling precise, entity-level protection. Encryption is reversible, allowing authorized users to restore original video content. Designed as a secure alternative to traditional blurring or redaction techniques."
+      "SecureFrame is an AI-powered video privacy system that uses YOLOv8 object detection and AES-CTR encryption to selectively secure sensitive entities in video footage. Objects are detected and tracked across frames, enabling precise, entity-level protection. Encryption is reversible, allowing authorized users to restore original video content. Designed as a secure alternative to traditional blurring or redaction techniques."
     ],
     "author": "Daniel Kaminsky, Rishabh Jain, David Vera, Kethy Hu, Tazrin Khalid",
     "media": "/projects/SecureframeDemo.mp4",
     "tags": [
       "YOLOv8",
       "React",
-      "AES",
+      "AES-CTR",
       "Flask"
     ],
     "github": "https://github.com/DanielKaminsky05/Secureframe"
@@ -39,7 +57,8 @@
     "title": "RiskGuard",
     "description": [
       "A Chrome extension built for retail investors to detect behavioral biases in real-time.",
-      "RiskGuard overlays directly onto brokerage interfaces, interacting with the DOM to monitor trading activity. It identifies psychological pitfalls like Revenge Trading and Overtrading, using a Flask/Snowflake backend for analysis and Gemini to provide AI-driven coaching. The system tracks 'Capital Preserved' to quantify the value of disciplined trading."
+      "RiskGuard overlays directly onto brokerage interfaces, interacting with the DOM to monitor trading activity. It identifies psychological pitfalls like Revenge Trading and Overtrading, using a Flask/Snowflake backend for analysis and Gemini to provide AI-driven coaching. The system tracks 'Capital Preserved' to quantify the value of disciplined trading.",
+      "Trained XGBoost bias classifiers reaching 0.949 AUROC, backed by a Snowflake feature pipeline that runs 4.8x faster than the baseline."
     ],
     "author": "Daniel Kaminsky, David Vera, Anthony Stefanuto",
     "media": "/projects/riskguard.webp",
@@ -48,7 +67,8 @@
       "Flask",
       "Snowflake",
       "WXT",
-      "Gemini"
+      "Gemini",
+      "XGBoost"
     ],
     "github": "https://github.com/DanielKaminsky05/QHacks2026"
   },
@@ -72,7 +92,7 @@
     "id": "5",
     "title": "Tree Machine Learning Library",
     "description": [
-      "A C++ machine learning library built from scratch as a final OOP course project. Implements classic models including Linear Regression, Logistic Regression, Random Forest, and XGBoost. Designed around core OOP patterns such as Factory, Builder, and Strategy to ensure modularity and extensibility.",
+      "A C++ machine learning library built from scratch as a final OOP course project. Implements classic models including Linear Regression, Logistic Regression, Decision Trees, Random Forests, and Gradient Boosting. Designed around core OOP patterns such as Factory, Builder, and Strategy to ensure modularity and extensibility.",
       "Features a custom Dataset abstraction for loading CSV data and benchmarking models consistently. Includes a Qt-based GUI, command-line demos, and a full unit testing suite using GoogleTest."
     ],
     "author": "Daniel Kaminsky, Thomson Lam, Henrique Leite",

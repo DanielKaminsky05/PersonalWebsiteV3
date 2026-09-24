@@ -63,8 +63,8 @@ export default function ExperienceCard({ experience }: { experience: Experience 
             ))}
         </ul>
 
-          {/* Deep Dive Button */}
-          {experience.id !== "1" && (
+          {/* Deep Dive Button — only for roles that have an MDX deep-dive page */}
+          {["2", "3"].includes(experience.id) && (
             <div>
               <Link 
                 href={`/experience/${experience.id}`}

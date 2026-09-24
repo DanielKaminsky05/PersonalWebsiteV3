@@ -13,10 +13,10 @@ export default function Hero({ onToggleMode }: { onToggleMode?: () => void }) {
           Hi, I'm Daniel
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 font-medium tracking-wide">
-          CS @ Western
+          CS + Ivey @ Western
         </p>
         <div className="text-lg font-light text-gray-200 text-pretty md:text-balance">
-          Im a <span className="font-medium text-white">Full Stack</span> software engineer<br className="inline md:hidden" /> based in <span className="font-medium text-white">Toronto</span> & London ON
+          Im a <span className="font-medium text-white">Full Stack</span> software engineer<br className="inline md:hidden" /> based in <span className="font-medium text-white">Toronto</span>
           <br className="block my-1 content-['']" />
         </div>
         
